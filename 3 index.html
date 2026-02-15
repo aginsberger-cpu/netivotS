@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אוכל לנשמה | לימוד בחברותא - נתיבות</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            background-color: #020202; 
+            color: #fff; 
+            margin: 0; 
+            background: 
+                radial-gradient(circle at 50% 20%, rgba(191, 149, 63, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 0% 100%, rgba(191, 149, 63, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(191, 149, 63, 0.1) 0%, transparent 40%),
+                #020202;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        .gold-text {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Cinzel', serif;
+            filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8));
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(191, 149, 63, 0.3);
+            border-radius: 50px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.9);
+        }
+
+        .btn-gold {
+            background: linear-gradient(45deg, #b38728, #bf953f, #aa771c);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(191, 149, 63, 0.5);
+        }
+
+        input {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(191, 149, 63, 0.25) !important;
+            color: #fff !important;
+            padding: 1.4rem !important;
+            border-radius: 20px !important;
+            width: 100%;
+        }
+
+        .text-shadow-heavy {
+            text-shadow: 0 2px 20px rgba(0,0,0,1), 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .sub-glow {
+            color: #bf953f;
+            letter-spacing: 6px;
+            font-weight: bold;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+        }
+
+        #privacyModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #050505;
+            border: 1px solid #bf953f;
+            max-width: 650px;
+            width: 100%;
+            border-radius: 30px;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="min-h-[90vh] flex flex-col items-center justify-center text-center px-6 relative z-10">
+        <span class="sub-glow text-[10px] md:text-xs mb-6 uppercase tracking-[0.6em]">NETIVOT ORGANIZATION</span>
+        
+        <h1 class="text-7xl md:text-[11rem] font-bold mb-2 gold-text tracking-tighter leading-none">אוכל לנשמה</h1>
+        <h2 class="text-4xl md:text-7xl font-bold mb-10 gold-text tracking-tight italic">לימוד בחברותא</h2>
+        
+        <div class="max-w-3xl mx-auto space-y-8 text-white text-lg md:text-2xl font-light leading-relaxed text-shadow-heavy">
+            <p class="opacity-95 italic">"במיוחד בימים אלו, הנשמה שלנו זקוקה לעוגן של שקט, עומק ומשמעות"</p>
+            <div class="inline-block p-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent">
+                <p class="font-bold text-[#fcf6ba] bg-black/40 py-5 px-12 rounded-sm">הצטרפו לחוויה שמשנה את השבוע</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pb-40 relative z-10">
+        
+        <!-- Image Box - הריבוע המיועד לתמונה שלך -->
+        <div class="glass-card overflow-hidden mb-32 border-[#bf953f]/40 group relative min-h-[450px] flex items-center justify-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none z-10"></div>
+            <!-- כאן התמונה שלך תיכנס -->
+            <img src="chevruta.jpg" alt="אוכל לנשמה" class="w-full h-auto opacity-90 transition-all duration-1000 group-hover:opacity-100" 
+                 onerror="this.style.display='none';">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+                 <span class="gold-text text-3xl tracking-[0.4em]">GLOBAL CONNECTION</span>
+            </div>
+        </div>
+
+        <section class="text-center mb-32 space-y-12">
+            <h3 class="text-4xl md:text-6xl font-bold gold-text italic">זמן איכות עם עצמך</h3>
+            <div class="max-w-3xl mx-auto space-y-6 text-gray-200 text-xl md:text-2xl font-light text-shadow-heavy leading-relaxed">
+                <p>לימוד בחברותא הוא לא רק רכישת ידע, הוא רגע של נשימה בתוך מרוץ החיים. זה המקום לשאול, להעמיק ולגלות את העושר שבמסורת שלנו בדרך שמתאימה בדיוק לך.</p>
+                <p class="text-[#fcf6ba] font-bold">שעה אחת בשבוע. בטלפון או במפגש. חיבור לכל החיים.</p>
+            </div>
+        </section>
+
+        <section class="glass-card p-12 md:p-24 relative overflow-hidden">
+            <div class="relative z-10">
+                <div class="text-center mb-20">
+                    <h3 class="text-4xl md:text-6xl font-bold mb-6 gold-text">החברותא שלך מחכה לך</h3>
+                    <p class="text-white text-xl md:text-2xl text-shadow-heavy">השאירו פרטים ונציג נתיבות יחזור אליכם לתיאום אישי</p>
+                </div>
+
+                <form action="https://formspree.io/f/mojnaqzo" method="POST" class="space-y-12 max-w-2xl mx-auto">
+                    <input type="hidden" name="_subject" value="פנייה חדשה: אוכל לנשמה - חברותא">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-right">
+                        <div class="space-y-3">
+                            <label class="mr-4 text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">שם מלא</label>
+                            <input type="text" name="name" required placeholder="איך קוראים לך?">
+                        </div>
+                        <div class="space-y-3">
+                            <label class="mr-4 text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">טלפון</label>
+                            <input type="tel" name="phone" required placeholder="מספר טלפון ליצירת קשר" dir="ltr">
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-right">
+                        <label class="mr-4 text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">מיקום</label>
+                        <input type="text" name="location" required placeholder="איפה אתם בעולם?">
+                    </div>
+                    
+                    <div class="pt-10">
+                        <button type="submit" class="w-full btn-gold py-8 rounded-2xl text-2xl md:text-4xl shadow-2xl uppercase tracking-[0.2em]">
+                            אני רוצה להתחיל ללמוד
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-32 text-center border-t border-white/5 bg-black/95 relative z-10">
+        <div class="gold-text text-5xl mb-6 tracking-[0.5em]">NETIVOT</div>
+        <p class="text-gray-400 text-sm tracking-[0.3em] uppercase mb-12 italic">אוכל לנשמה • לימוד בחברותא • חיבור לשורשים</p>
+        <button onclick="document.getElementById('privacyModal').style.display='flex'" class="text-gray-600 hover:text-[#bf953f] text-xs underline mb-12 block mx-auto transition-all">
+            Privacy Policy | מדיניות פרטיות
+        </button>
+        <div class="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent mx-auto"></div>
+        <p class="text-gray-800 text-[10px] tracking-[0.4em] uppercase mt-12">© 2026 Netivot Organization • All Rights Reserved</p>
+    </footer>
+
+    <div id="privacyModal" onclick="this.style.display='none'">
+        <div class="modal-content text-right" onclick="event.stopPropagation()">
+            <h2 class="gold-text text-2xl mb-6 italic">מדיניות פרטיות</h2>
+            <div class="text-gray-400 space-y-4 text-sm leading-relaxed italic">
+                <p>המידע הנמסר בטופס זה מיועד אך ורק לצורך יצירת קשר ותיאום לימוד חברותא מטעם ארגון נתיבות.</p>
+                <p>אנו מתחייבים לשמור על סודיות פרטיכם ולא להעבירם לאף גורם חיצוני.</p>
+                <button onclick="document.getElementById('privacyModal').style.display='none'" class="mt-8 text-[#bf953f] border border-[#bf953f] px-10 py-2 rounded-full hover:bg-[#bf953f] hover:text-black transition-all font-bold">סגור</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
