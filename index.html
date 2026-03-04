@@ -1,202 +1,440 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" data-theme="dark">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="[https://www.googletagmanager.com/gtag/js?id=AW-944658564](https://www.googletagmanager.com/gtag/js?id=AW-944658564)"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-944658564');
-</script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-944658564"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-944658564');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אוכל לנשמה | לימוד בחברותא - נתיבות</title>
+    <title>לימוד חברותא | שבת, תפילה וחגים | נתיבות</title>
+    <meta name="description" content="לימוד חברותא אישית — שבת, תפילה, חגים ומסורת. ללא עלות, בטלפון, בהתאמה אישית. מתאים לכל רמה, גם למי שמעולם לא למד.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Assistant', sans-serif; 
-            background-color: #020202; 
-            color: #fff; 
-            margin: 0; 
-            background: 
-                radial-gradient(circle at 50% 20%, rgba(191, 149, 63, 0.2) 0%, transparent 60%),
-                radial-gradient(circle at 0% 100%, rgba(191, 149, 63, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 100% 100%, rgba(191, 149, 63, 0.1) 0%, transparent 40%),
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #020202;
+            color: #fff;
+            margin: 0;
+            background:
+                radial-gradient(circle at 50% 20%, rgba(191,149,63,0.2) 0%, transparent 60%),
+                radial-gradient(circle at 0% 100%, rgba(191,149,63,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(191,149,63,0.1) 0%, transparent 40%),
                 #020202;
             background-attachment: fixed;
             overflow-x: hidden;
         }
-        
         .gold-text {
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'Cinzel', serif;
-            filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
         }
-
         .glass-card {
-            background: rgba(10, 10, 10, 0.7);
+            background: rgba(10,10,10,0.7);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(191, 149, 63, 0.3);
+            border: 1px solid rgba(191,149,63,0.3);
             border-radius: 50px;
             box-shadow: 0 50px 100px rgba(0,0,0,0.9);
         }
-
         .btn-gold {
             background: linear-gradient(45deg, #b38728, #bf953f, #aa771c);
             color: white;
             font-weight: bold;
             cursor: pointer;
             border: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
-
-        .btn-gold:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 60px rgba(191, 149, 63, 0.5);
-        }
-
+        .btn-gold:hover { transform: translateY(-5px); box-shadow: 0 25px 60px rgba(191,149,63,0.5); }
         input {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(191, 149, 63, 0.25) !important;
+            background: rgba(255,255,255,0.05) !important;
+            border: 1px solid rgba(191,149,63,0.25) !important;
             color: #fff !important;
             padding: 1.4rem !important;
             border-radius: 20px !important;
             width: 100%;
         }
-
-        .text-shadow-heavy {
-            text-shadow: 0 2px 20px rgba(0,0,0,1), 0 0 10px rgba(0,0,0,0.8);
+        input::placeholder { color: rgba(255,255,255,0.3) !important; }
+        .text-shadow-heavy { text-shadow: 0 2px 20px rgba(0,0,0,1), 0 0 10px rgba(0,0,0,0.8); }
+        .sub-glow { color: #bf953f; letter-spacing: 6px; font-weight: bold; text-shadow: 0 2px 8px rgba(0,0,0,0.9); }
+        .topic-card {
+            background: rgba(191,149,63,0.05);
+            border: 1px solid rgba(191,149,63,0.2);
+            border-radius: 24px;
+            transition: all 0.3s ease;
         }
-
-        .sub-glow {
-            color: #bf953f;
-            letter-spacing: 6px;
-            font-weight: bold;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+        .topic-card:hover {
+            background: rgba(191,149,63,0.12);
+            border-color: rgba(191,149,63,0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(191,149,63,0.15);
         }
+        .testimonial-card {
+            background: rgba(10,10,10,0.8);
+            border: 1px solid rgba(191,149,63,0.2);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover { border-color: rgba(191,149,63,0.5); box-shadow: 0 20px 50px rgba(191,149,63,0.12); }
+        .faq-item { border-bottom: 1px solid rgba(191,149,63,0.15); }
+        .faq-answer { display: none; }
+        .faq-item.open .faq-answer { display: block; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-arrow { transition: transform 0.3s ease; display: inline-block; }
+        .whatsapp-float {
+            position: fixed; bottom: 30px; left: 30px;
+            background-color: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; animation: pulse-green 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+        nav a { transition: color 0.2s; }
+        nav a:hover { color: #fcf6ba; }
+        .gold-line { height: 1px; background: linear-gradient(to right, transparent, #bf953f, transparent); margin: 0 auto; }
+        /* מצב בהיר */
+        [data-theme="light"] body {
+            background: #fdf8f0 !important;
+            color: #1a1000 !important;
+        }
+        [data-theme="light"] body {
+            background:
+                radial-gradient(circle at 50% 20%, rgba(191,149,63,0.12) 0%, transparent 60%),
+                radial-gradient(circle at 0% 100%, rgba(191,149,63,0.06) 0%, transparent 40%),
+                #fdf8f0 !important;
+        }
+        [data-theme="light"] .glass-card {
+            background: rgba(255,248,235,0.95) !important;
+            border-color: rgba(191,149,63,0.4) !important;
+        }
+        [data-theme="light"] .topic-card {
+            background: rgba(255,248,235,0.9) !important;
+            border-color: rgba(191,149,63,0.3) !important;
+        }
+        [data-theme="light"] .testimonial-card {
+            background: rgba(255,248,235,0.95) !important;
+            border-color: rgba(191,149,63,0.3) !important;
+        }
+        [data-theme="light"] p, [data-theme="light"] .text-gray-300,
+        [data-theme="light"] .text-gray-200, [data-theme="light"] .text-gray-400 {
+            color: #3a2800 !important;
+        }
+        [data-theme="light"] input {
+            background: rgba(255,255,255,0.8) !important;
+            color: #1a1000 !important;
+            border-color: rgba(191,149,63,0.4) !important;
+        }
+        [data-theme="light"] input::placeholder { color: rgba(80,50,0,0.4) !important; }
+        [data-theme="light"] nav {
+            background: linear-gradient(to bottom, rgba(253,248,240,0.98), transparent) !important;
+        }
+        [data-theme="light"] footer {
+            background: rgba(245,235,210,0.98) !important;
+            border-color: rgba(191,149,63,0.2) !important;
+        }
+        [data-theme="light"] .text-shadow-heavy { text-shadow: none; }
+        [data-theme="light"] #thankYou .text-gray-300 { color: #3a2800 !important; }
+        [data-theme="light"] .text-gray-500, [data-theme="light"] .text-gray-600,
+        [data-theme="light"] .text-gray-800 { color: #5a3800 !important; }
+        [data-theme="light"] footer p, [data-theme="light"] footer span { color: #7a5500 !important; }
+        [data-theme="light"] .sub-glow { color: #bf953f !important; text-shadow: none; }
+
+        .theme-toggle {
+            position: fixed; top: 14px; left: 14px; z-index: 200;
+            background: rgba(191,149,63,0.15);
+            border: 1px solid rgba(191,149,63,0.5);
+            border-radius: 50px; padding: 8px 16px;
+            display: flex; align-items: center; gap: 6px;
+            cursor: pointer; font-family: 'Assistant', sans-serif;
+            font-size: 0.75rem; font-weight: 700;
+            color: #bf953f; letter-spacing: 0.05em;
+            transition: all 0.3s; backdrop-filter: blur(10px);
+        }
+        .theme-toggle:hover { border-color: #fcf6ba; background: rgba(191,149,63,0.25); }
 
         #privacyModal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            inset: 0;
-            background: rgba(0,0,0,0.95);
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            display: none; position: fixed; z-index: 1000; inset: 0;
+            background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px;
         }
-
-        .modal-content {
-            background: #050505;
-            border: 1px solid #bf953f;
-            max-width: 650px;
-            width: 100%;
-            border-radius: 30px;
-            padding: 40px;
-        }
+        .modal-content { background: #050505; border: 1px solid #bf953f; max-width: 650px; width: 100%; border-radius: 30px; padding: 40px; }
     </style>
 </head>
 <body>
 
-    <header class="min-h-[90vh] flex flex-col items-center justify-center text-center px-6 relative z-10">
-        <span class="sub-glow text-[10px] md:text-xs mb-6 uppercase tracking-[0.6em]">NETIVOT ORGANIZATION</span>
-        
-        <h1 class="text-7xl md:text-[11rem] font-bold mb-2 gold-text tracking-tighter leading-none">אוכל לנשמה</h1>
-        <h2 class="text-4xl md:text-7xl font-bold mb-10 gold-text tracking-tight italic">לימוד בחברותא</h2>
-        
-        <div class="max-w-3xl mx-auto space-y-8 text-white text-lg md:text-2xl font-light leading-relaxed text-shadow-heavy">
-            <p class="opacity-95 italic">"במיוחד בימים אלו, הנשמה שלנו זקוקה לעוגן של שקט, עומק ומשמעות"</p>
-            <div class="inline-block p-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent">
-                <p class="font-bold text-[#fcf6ba] bg-black/40 py-5 px-12 rounded-sm">הצטרפו לחוויה שמשנה את השבוע</p>
-            </div>
+<button class="theme-toggle" onclick="toggleTheme()">
+    <span id="themeIcon">☀️</span>
+    <span id="themeLbl">מצב בהיר</span>
+</button>
+
+<a href="https://wa.me/17189540286?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%91%D7%99%D7%A2%D7%AA%20%D7%97%D7%91%D7%A8%D7%95%D7%AA%D7%90" class="whatsapp-float" target="_blank">
+    <svg viewBox="0 0 32 32" class="w-8 h-8 fill-current">
+        <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.236-.38-.916-.803-1.432c-.55-.662-1.124-1.26-1.124-1.26a.93.93 0 0 0-.568-.306c-.19 0-.355.051-.522.138-.107.054-.724.373-1.147.76-.54.495-1.15 1.18-1.503 1.923-.39.813-.42 1.64-.118 2.489.352.983.996 2.07 1.62 3.008.736 1.114 1.782 2.186 2.946 3.066 1.139.86 2.39 1.54 3.64 1.93 1.156.36 2.218.446 3.38.203.94-.196 1.875-.744 2.466-1.467.452-.552.82-1.13.922-1.442.01-.033.017-.067.017-.1s-.024-.065-.051-.085c-.29-.21-1.423-.81-1.794-.907Z"></path>
+        <path d="M16 0C7.163 0 0 7.163 0 16a15.91 15.91 0 0 0 2.504 8.582L.03 31.706a1.01 1.01 0 0 0 1.279 1.279l7.126-2.474A15.91 15.91 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0Zm0 29a12.923 12.923 0 0 1-6.657-1.82 1.009 1.009 0 0 0-.763-.122l-4.755 1.652 1.652-4.755a1.009 1.009 0 0 0-.122-.763A12.923 12.923 0 0 1 3 16C3 8.832 8.832 3 16 3s13 5.832 13 13-5.832 13-13 13Z"></path>
+    </svg>
+</a>
+
+<nav class="fixed top-0 w-full z-50 py-5 px-8" style="background: linear-gradient(to bottom, rgba(2,2,2,0.95), transparent);">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="#contact" class="btn-gold px-6 py-2 rounded-full text-sm tracking-widest uppercase">קבעו חברותא</a>
+        <div class="hidden md:flex gap-10 text-[11px] tracking-widest uppercase text-[#bf953f]/70">
+            <a href="#faq">שאלות נפוצות</a>
+            <a href="#testimonials">המלצות</a>
+            <a href="#topics">נושאי לימוד</a>
+            <a href="#about">אודות</a>
         </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-6 pb-40 relative z-10">
-        
-        <!-- Image Box - הריבוע המיועד לתמונה שלך -->
-        <div class="glass-card overflow-hidden mb-32 border-[#bf953f]/40 group relative min-h-[450px] flex items-center justify-center">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none z-10"></div>
-            <!-- כאן התמונה שלך תיכנס -->
-            <img src="chevruta.jpg" alt="אוכל לנשמה" class="w-full h-auto opacity-90 transition-all duration-1000 group-hover:opacity-100" 
-                 onerror="this.style.display='none';">
-            <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                 <span class="gold-text text-3xl tracking-[0.4em]">GLOBAL CONNECTION</span>
-            </div>
+        <div class="flex items-center gap-2">
+            <span class="text-[#bf953f] font-bold text-lg" style="font-family:'Cinzel',serif;">נ</span>
+            <span class="text-[9px] text-[#bf953f]/50 tracking-[0.3em] uppercase hidden md:block">נתיבות</span>
         </div>
+    </div>
+</nav>
 
-        <section class="text-center mb-32 space-y-12">
-            <h3 class="text-4xl md:text-6xl font-bold gold-text italic">זמן איכות עם עצמך</h3>
-            <div class="max-w-3xl mx-auto space-y-6 text-gray-200 text-xl md:text-2xl font-light text-shadow-heavy leading-relaxed">
-                <p>לימוד בחברותא הוא לא רק רכישת ידע, הוא רגע של נשימה בתוך מרוץ החיים. זה המקום לשאול, להעמיק ולגלות את העושר שבמסורת שלנו בדרך שמתאימה בדיוק לך.</p>
-                <p class="text-[#fcf6ba] font-bold">שעה אחת בשבוע. בטלפון או במפגש. חיבור לכל החיים.</p>
-            </div>
-        </section>
+<header class="min-h-[90vh] flex flex-col items-center justify-center text-center px-6 relative z-10 pt-20">
+    <span class="sub-glow text-[10px] md:text-xs mb-6 uppercase tracking-[0.6em]">NETIVOT ORGANIZATION</span>
+    <h1 class="text-6xl md:text-[10rem] font-bold mb-2 gold-text tracking-tighter leading-none">אוכל לנשמה</h1>
+    <h2 class="text-3xl md:text-6xl font-bold mb-6 gold-text tracking-tight italic">לימוד חברותא אישי</h2>
+    <div class="gold-line w-48 mb-6"></div>
+    <p class="text-[#bf953f]/80 text-sm tracking-[0.4em] uppercase mb-8">שבת · תפילה · חגים · אמונה · מסורת</p>
+    <div class="max-w-3xl mx-auto space-y-6 text-white text-lg md:text-2xl font-light leading-relaxed text-shadow-heavy">
+        <p class="opacity-90 italic">"במיוחד בימים אלו, הנשמה שלנו זקוקה לעוגן של שקט, עומק ומשמעות"</p>
+        <div class="inline-block p-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent">
+            <p class="font-bold text-[#fcf6ba] bg-black/40 py-5 px-12 rounded-sm">הצטרפו לחוויה שמשנה את השבוע</p>
+        </div>
+    </div>
+    <a href="#contact" class="btn-gold mt-12 px-14 py-5 rounded-full text-xl tracking-widest uppercase shadow-2xl inline-block">
+        אני רוצה לקבוע חברותא ←
+    </a>
+</header>
 
-        <section class="glass-card p-12 md:p-24 relative overflow-hidden">
-            <div class="relative z-10">
-                <div class="text-center mb-20">
-                    <h3 class="text-4xl md:text-6xl font-bold mb-6 gold-text">החברותא שלך מחכה לך</h3>
-                    <p class="text-white text-xl md:text-2xl text-shadow-heavy">השאירו פרטים ונציג נתיבות יחזור אליכם לתיאום אישי</p>
-                </div>
+<main class="max-w-5xl mx-auto px-6 pb-40 relative z-10">
 
-                <form action="https://formspree.io/f/mojnaqzo" method="POST" class="space-y-12 max-w-2xl mx-auto">
-                    <input type="hidden" name="_subject" value="פנייה חדשה: אוכל לנשמה - חברותא">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-right">
-                        <div class="space-y-3">
-                            <label class="mr-4 text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">שם מלא</label>
-                            <input type="text" name="name" required placeholder="איך קוראים לך?">
-                        </div>
-                        <div class="space-y-3">
-                            <label class="mr-4 text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">טלפון</label>
-                            <input type="tel" name="phone" required placeholder="מספר טלפון ליצירת קשר" dir="ltr">
-                        </div>
-                    </div>
-                    <div class="space-y-3 text-right">
-                        <label class="mr-4 text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">מיקום</label>
-                        <input type="text" name="location" required placeholder="איפה אתם בעולם?">
-                    </div>
-                    
-                    <div class="pt-10">
-                        <button type="submit" class="w-full btn-gold py-8 rounded-2xl text-2xl md:text-4xl shadow-2xl uppercase tracking-[0.2em]">
-                            אני רוצה להתחיל ללמוד
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="py-32 text-center border-t border-white/5 bg-black/95 relative z-10">
-        <div class="gold-text text-5xl mb-6 tracking-[0.5em]">NETIVOT</div>
-        <p class="text-gray-400 text-sm tracking-[0.3em] uppercase mb-12 italic">אוכל לנשמה • לימוד בחברותא • חיבור לשורשים</p>
-        <button onclick="document.getElementById('privacyModal').style.display='flex'" class="text-gray-600 hover:text-[#bf953f] text-xs underline mb-12 block mx-auto transition-all">
-            Privacy Policy | מדיניות פרטיות
-        </button>
-        <div class="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#bf953f] to-transparent mx-auto"></div>
-        <p class="text-gray-800 text-[10px] tracking-[0.4em] uppercase mt-12">© 2026 Netivot Organization • All Rights Reserved</p>
-    </footer>
-
-    <div id="privacyModal" onclick="this.style.display='none'">
-        <div class="modal-content text-right" onclick="event.stopPropagation()">
-            <h2 class="gold-text text-2xl mb-6 italic">מדיניות פרטיות</h2>
-            <div class="text-gray-400 space-y-4 text-sm leading-relaxed italic">
-                <p>המידע הנמסר בטופס זה מיועד אך ורק לצורך יצירת קשר ותיאום לימוד חברותא מטעם ארגון נתיבות.</p>
-                <p>אנו מתחייבים לשמור על סודיות פרטיכם ולא להעבירם לאף גורם חיצוני.</p>
-                <button onclick="document.getElementById('privacyModal').style.display='none'" class="mt-8 text-[#bf953f] border border-[#bf953f] px-10 py-2 rounded-full hover:bg-[#bf953f] hover:text-black transition-all font-bold">סגור</button>
-            </div>
+    <div class="glass-card overflow-hidden mb-32 border-[#bf953f]/40 group relative min-h-[450px] flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none z-10"></div>
+        <img src="chevruta.jpg" alt="לימוד חברותא נתיבות" class="w-full h-auto opacity-90 transition-all duration-1000 group-hover:opacity-100" onerror="this.style.display='none';">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+            <span class="gold-text text-3xl tracking-[0.4em]">GLOBAL CONNECTION</span>
         </div>
     </div>
 
+    <section id="about" class="text-center mb-32 space-y-10">
+        <h3 class="text-4xl md:text-6xl font-bold gold-text italic">זמן איכות עם עצמך</h3>
+        <div class="gold-line w-32"></div>
+        <div class="max-w-3xl mx-auto space-y-6 text-gray-200 text-xl md:text-2xl font-light text-shadow-heavy leading-relaxed">
+            <p>לימוד בחברותא הוא לא רק רכישת ידע — הוא רגע של נשימה בתוך מרוץ החיים. זה המקום לשאול, להעמיק ולגלות את העושר שבמסורת שלנו בדרך שמתאימה בדיוק לך.</p>
+            <p class="text-[#fcf6ba] font-bold">שעה אחת בשבוע. בטלפון או במפגש. חיבור לכל החיים.</p>
+            <p class="text-gray-400 text-lg">ללא עלות. ללא שיפוטיות. בקצב שלך.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+            <div class="topic-card p-8 text-center">
+                <div class="gold-text text-4xl font-bold mb-2">1,500+</div>
+                <div class="text-[#bf953f]/60 text-xs tracking-widest uppercase">חברותות פעילות</div>
+            </div>
+            <div class="topic-card p-8 text-center">
+                <div class="gold-text text-4xl font-bold mb-2">24/6</div>
+                <div class="text-[#bf953f]/60 text-xs tracking-widest uppercase">לימוד מסביב לשעון</div>
+            </div>
+            <div class="topic-card p-8 text-center">
+                <div class="gold-text text-4xl font-bold mb-2">100%</div>
+                <div class="text-[#bf953f]/60 text-xs tracking-widest uppercase">לשם שמיים</div>
+            </div>
+            <div class="topic-card p-8 text-center">
+                <div class="gold-text text-4xl font-bold mb-2">∞</div>
+                <div class="text-[#bf953f]/60 text-xs tracking-widest uppercase">אור אינסופי</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="topics" class="mb-32">
+        <div class="text-center mb-16">
+            <span class="sub-glow text-[10px] uppercase tracking-[0.5em]">עולם שלם מחכה לך</span>
+            <h3 class="text-4xl md:text-6xl font-bold gold-text italic mt-4 mb-4">מה נלמד יחד?</h3>
+            <div class="gold-line w-24"></div>
+            <p class="text-gray-400 mt-6 text-lg">בחר את הנושא שהכי קרוב ללב שלך — נתאים לך חברותא בדיוק בשבילך</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="topic-card p-8"><div class="text-3xl mb-4">🕯️</div><h4 class="text-lg font-bold text-[#fcf6ba] mb-3">שבת קודש</h4><p class="text-gray-400 text-sm leading-relaxed">מה עושים בשבת? משמעות הנרות, הקידוש, ההבדלה — כל מה שתמיד רצית לדעת בלי להתבייש לשאול.</p></div>
+            <div class="topic-card p-8"><div class="text-3xl mb-4">🙏</div><h4 class="text-lg font-bold text-[#fcf6ba] mb-3">תפילה למתחילים</h4><p class="text-gray-400 text-sm leading-relaxed">שחרית, מנחה, ערבית — מה אומרים, למה, ואיך. לימוד פשוט שיפתח לך שפה חדשה עם הקב"ה.</p></div>
+            <div class="topic-card p-8"><div class="text-3xl mb-4">🍎</div><h4 class="text-lg font-bold text-[#fcf6ba] mb-3">חגים ומועדים</h4><p class="text-gray-400 text-sm leading-relaxed">ראש השנה, יום כיפור, פסח, שבועות — הסיפור מאחורי כל חג והמשמעות העמוקה שבו.</p></div>
+            <div class="topic-card p-8"><div class="text-3xl mb-4">✨</div><h4 class="text-lg font-bold text-[#fcf6ba] mb-3">אמונה וביטחון</h4><p class="text-gray-400 text-sm leading-relaxed">מה זה אמונה? האם יש השגחה פרטית? שאלות גדולות עם תשובות עמוקות שישנו את הדרך בה אתה רואה את החיים.</p></div>
+            <div class="topic-card p-8"><div class="text-3xl mb-4">📜</div><h4 class="text-lg font-bold text-[#fcf6ba] mb-3">מוסר ואורח חיים</h4><p class="text-gray-400 text-sm leading-relaxed">יחסים, כבוד הורים, גמילות חסדים — חוכמת התורה על חיי היומיום שלך.</p></div>
+            <div class="topic-card p-8" style="border-color:rgba(191,149,63,0.45)"><div class="text-3xl mb-4">⚖️</div><h4 class="text-lg font-bold text-[#fcf6ba] mb-3">הלכה למעשה</h4><p class="text-gray-400 text-sm leading-relaxed">כשרות, ברכות, שבת, חגים — הלכות יומיומיות בצורה ברורה ופשוטה. ללא שיפוטיות, בקצב שלך.</p></div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="mb-32">
+        <div class="text-center mb-16">
+            <span class="sub-glow text-[10px] uppercase tracking-[0.5em]">הם כבר שם</span>
+            <h3 class="text-4xl md:text-6xl font-bold gold-text italic mt-4 mb-4">מה אומרים המשתתפים</h3>
+            <div class="gold-line w-24"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="testimonial-card p-10">
+                <div class="text-[#bf953f] text-5xl opacity-30 mb-6" style="font-family:serif">"</div>
+                <p class="text-gray-300 font-light leading-relaxed mb-8 text-right text-lg italic">החברותא המדהימה שלי כזאת חכמה עם כזה ניסיון חיים שפשוט כל שאלה שיש לי אני מתייעצת איתה. ממש קיבלתי מתנה לחיים.</p>
+                <div class="gold-line w-full mb-6"></div>
+                <div class="text-right"><div class="text-[#fcf6ba] font-bold text-lg">ורד</div><div class="text-[#bf953f]/60 text-xs tracking-widest uppercase mt-1">ירושלים</div></div>
+            </div>
+            <div class="testimonial-card p-10" style="border-color:rgba(191,149,63,0.4)">
+                <div class="text-[#bf953f] text-5xl opacity-30 mb-6" style="font-family:serif">"</div>
+                <p class="text-gray-300 font-light leading-relaxed mb-8 text-right text-lg italic">ניפצו לי ממש את כל הסטיגמות על הדת והדתיים. פתאום גיליתי אנשים נחמדים ולא מפחידים בכלל — ההפך הגמור ממה שחשבתי.</p>
+                <div class="gold-line w-full mb-6"></div>
+                <div class="text-right"><div class="text-[#fcf6ba] font-bold text-lg">דניאלה</div><div class="text-[#bf953f]/60 text-xs tracking-widest uppercase mt-1">מורה לחינוך מיוחד</div></div>
+            </div>
+            <div class="testimonial-card p-10">
+                <div class="text-[#bf953f] text-5xl opacity-30 mb-6" style="font-family:serif">"</div>
+                <p class="text-gray-300 font-light leading-relaxed mb-8 text-right text-lg italic">ראייה מזווית אחרת, שונה. לא זו שהורגלנו אליה. ראייה תכליתית — בגדול מודה לכם שהכרתם לי אותו.</p>
+                <div class="gold-line w-full mb-6"></div>
+                <div class="text-right"><div class="text-[#fcf6ba] font-bold text-lg">שניר</div><div class="text-[#bf953f]/60 text-xs tracking-widest uppercase mt-1">חיפה</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="mb-32">
+        <div class="text-center mb-16">
+            <span class="sub-glow text-[10px] uppercase tracking-[0.5em]">כל מה שרצית לדעת</span>
+            <h3 class="text-4xl md:text-6xl font-bold gold-text italic mt-4 mb-4">שאלות נפוצות</h3>
+            <div class="gold-line w-24"></div>
+            <p class="text-gray-400 mt-6 text-lg italic">אין שאלה מיותרת — כאן הכל מותר לשאול</p>
+        </div>
+        <div class="max-w-3xl mx-auto glass-card p-8 md:p-12">
+            <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center"><span class="faq-arrow text-[#bf953f] text-xl">▾</span><h4 class="font-bold text-lg text-[#fcf6ba] text-right flex-1 pr-4">האם צריך רקע דתי כדי להצטרף?</h4></div>
+                <div class="faq-answer mt-4 text-gray-400 text-right leading-relaxed pr-8">בכלל לא. רוב המשתתפים שלנו הם חילונים ומסורתיים שמעולם לא למדו. ללא שיפוטיות, בקצב שלך, מהיסוד.</div>
+            </div>
+            <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center"><span class="faq-arrow text-[#bf953f] text-xl">▾</span><h4 class="font-bold text-lg text-[#fcf6ba] text-right flex-1 pr-4">כמה זמן לוקחת כל פגישה?</h4></div>
+                <div class="faq-answer mt-4 text-gray-400 text-right leading-relaxed pr-8">שעה אחת בשבוע — בטלפון, בזמן שנוח לך. בבוקר, בצהריים, או בערב. אתה קובע.</div>
+            </div>
+            <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center"><span class="faq-arrow text-[#bf953f] text-xl">▾</span><h4 class="font-bold text-lg text-[#fcf6ba] text-right flex-1 pr-4">האם זה באמת בחינם?</h4></div>
+                <div class="faq-answer mt-4 text-gray-400 text-right leading-relaxed pr-8">כן, לחלוטין. ארגון נתיבות פועל לשם שמיים מתוך שליחות. אין תשלום, אין מנוי, אין הפתעות.</div>
+            </div>
+            <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center"><span class="faq-arrow text-[#bf953f] text-xl">▾</span><h4 class="font-bold text-lg text-[#fcf6ba] text-right flex-1 pr-4">האם ינסו "לדתי" אותי?</h4></div>
+                <div class="faq-answer mt-4 text-gray-400 text-right leading-relaxed pr-8">ממש לא. אנחנו לא כאן לשנות אותך — אנחנו כאן להעשיר אותך. אנחנו מדליקים אור, ואתה מחליט מה לעשות איתו.</div>
+            </div>
+            <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex justify-between items-center"><span class="faq-arrow text-[#bf953f] text-xl">▾</span><h4 class="font-bold text-lg text-[#fcf6ba] text-right flex-1 pr-4">אפשר ללמוד רק על שבת וחגים?</h4></div>
+                <div class="faq-answer mt-4 text-gray-400 text-right leading-relaxed pr-8">בוודאי! אתה בוחר את הנושא. אפשר להתמקד רק בשבת, רק בחגים, רק בתפילה — הכל לפי מה שמדליק אותך.</div>
+            </div>
+            <div class="faq-item py-6 cursor-pointer" onclick="toggleFaq(this)" style="border-bottom:none">
+                <div class="flex justify-between items-center"><span class="faq-arrow text-[#bf953f] text-xl">▾</span><h4 class="font-bold text-lg text-[#fcf6ba] text-right flex-1 pr-4">מי החברותא שלי?</h4></div>
+                <div class="faq-answer mt-4 text-gray-400 text-right leading-relaxed pr-8">אנחנו מתאימים לך חברותא לפי האישיות שלך והנושאים שמעניינים אותך. אם לא הרגשת חיבור — נחפש לך אחרת.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="glass-card p-12 md:p-24 relative overflow-hidden">
+        <div class="relative z-10">
+            <div class="text-center mb-16">
+                <span class="sub-glow text-[10px] uppercase tracking-[0.5em]">הזדמנות של פעם בדור</span>
+                <h3 class="text-4xl md:text-6xl font-bold mb-4 gold-text mt-4">החברותא שלך מחכה לך</h3>
+                <div class="gold-line w-32 mb-6"></div>
+                <p class="text-white text-xl text-shadow-heavy">השאירו פרטים ונציג נתיבות יחזור אליכם לתיאום אישי</p>
+            </div>
+            <form action="https://formspree.io/f/mojnaqzo" method="POST" class="space-y-10 max-w-2xl mx-auto" id="leadForm">
+                <input type="hidden" name="_subject" value="פנייה חדשה: אוכל לנשמה - חברותא">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-right">
+                    <div class="space-y-3"><label class="text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">שם מלא</label><input type="text" name="name" id="fname" required placeholder="איך קוראים לך?"></div>
+                    <div class="space-y-3"><label class="text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">טלפון</label><input type="tel" name="phone" required placeholder="מספר טלפון" dir="ltr"></div>
+                </div>
+                <div class="space-y-3 text-right"><label class="text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">מיקום</label><input type="text" name="location" required placeholder="איפה אתם בעולם?"></div>
+                <div class="pt-6"><button type="submit" class="w-full btn-gold py-8 rounded-2xl text-2xl md:text-3xl shadow-2xl uppercase tracking-[0.2em]">אני רוצה להתחיל ללמוד ←</button></div>
+            </form>
+
+            <!-- דף תודה -->
+            <div id="thankYou" style="display:none;" class="text-center py-10">
+                <div class="mb-10">
+                    <div class="text-7xl mb-6">✨</div>
+                    <div class="gold-line w-32 mb-8"></div>
+                </div>
+                <h3 class="gold-text text-5xl md:text-6xl font-bold mb-6">אשריך!</h3>
+                <p class="text-[#fcf6ba] text-2xl font-bold mb-6 text-shadow-heavy">זכית לקבוע עתים לתורה</p>
+                <div class="gold-line w-48 mb-8"></div>
+                <p class="text-gray-300 text-xl font-light leading-relaxed mb-4 max-w-xl mx-auto">
+                    נציג מטעמנו יחזור אליך טלפונית בהקדם לתיאום הלימוד.
+                </p>
+                <p class="text-[#bf953f] text-lg italic mb-10">
+                    "לכל אחד יש ניצוץ בוער — עכשיו הגיע הזמן להפוך אותו לשלהבת"
+                </p>
+                <div class="gold-line w-32 mb-10"></div>
+                <p class="text-gray-500 text-sm tracking-widest uppercase">בשורות טובות · נתיבות לזיכוי הרבים</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="py-32 text-center border-t border-white/5 bg-black/95 relative z-10">
+    <div class="gold-text text-5xl mb-6 tracking-[0.5em]">NETIVOT</div>
+    <p class="text-gray-400 text-sm tracking-[0.3em] uppercase mb-8 italic">אוכל לנשמה • לימוד חברותא • חיבור לשורשים</p>
+    <div class="gold-line w-32 mb-8"></div>
+    <button onclick="document.getElementById('privacyModal').style.display='flex'" class="text-gray-600 hover:text-[#bf953f] text-xs underline mb-8 block mx-auto transition-all">Privacy Policy | מדיניות פרטיות</button>
+    <p class="text-gray-800 text-[10px] tracking-[0.4em] uppercase">© 2026 Netivot Organization • All Rights Reserved</p>
+</footer>
+
+<div id="privacyModal" onclick="this.style.display='none'">
+    <div class="modal-content text-right" onclick="event.stopPropagation()">
+        <h2 class="gold-text text-2xl mb-6 italic">מדיניות פרטיות</h2>
+        <div class="text-gray-400 space-y-4 text-sm leading-relaxed italic">
+            <p>המידע הנמסר בטופס זה מיועד אך ורק לצורך יצירת קשר ותיאום לימוד חברותא מטעם ארגון נתיבות.</p>
+            <p>אנו מתחייבים לשמור על סודיות פרטיכם ולא להעבירם לאף גורם חיצוני.</p>
+            <button onclick="document.getElementById('privacyModal').style.display='none'" class="mt-8 text-[#bf953f] border border-[#bf953f] px-10 py-2 rounded-full hover:bg-[#bf953f] hover:text-black transition-all font-bold">סגור</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleFaq(item) { item.classList.toggle('open'); }
+
+    function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') !== 'light';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+        document.getElementById('themeLbl').textContent = isDark ? 'מצב כהה' : 'מצב בהיר';
+    }
+
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = this;
+        const data = new FormData(form);
+        try {
+            await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+        } catch(err) {}
+        form.style.opacity = '0';
+        form.style.transform = 'translateY(-20px)';
+        form.style.transition = 'all 0.5s ease';
+        setTimeout(() => {
+            form.style.display = 'none';
+            const ty = document.getElementById('thankYou');
+            ty.style.display = 'block';
+            ty.style.opacity = '0';
+            ty.style.transform = 'translateY(20px)';
+            ty.style.transition = 'all 0.6s ease';
+            setTimeout(() => {
+                ty.style.opacity = '1';
+                ty.style.transform = 'translateY(0)';
+            }, 50);
+        }, 500);
+    });
+</script>
 </body>
 </html>
-
