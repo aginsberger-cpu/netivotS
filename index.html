@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl" data-theme="dark">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-944658564"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-944658564');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>לימוד חברותא | שבת, תפילה וחגים | נתיבות</title>
-    <meta name="description" content="לימוד חברותא אישית — שבת, תפילה, חגים ומסורת. ללא עלות, בטלפון, בהתאמה אישית. מתאים לכל רמה, גם למי שמעולם לא למד.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -170,6 +162,47 @@
             background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px;
         }
         .modal-content { background: #050505; border: 1px solid #bf953f; max-width: 650px; width: 100%; border-radius: 30px; padding: 40px; }
+
+        /* ===== תיקון צבעים במצב בהיר ===== */
+
+        /* כותרות gold-text — זהב עשיר ומיוחד במצב בהיר */
+        [data-theme="light"] .gold-text {
+            background: linear-gradient(to right, #c47f00, #f0b015, #8a5a00, #f5c518, #c47f00, #f0b015, #8a5a00) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            filter: drop-shadow(0 3px 8px rgba(180,120,0,0.35)) !important;
+        }
+
+        /* טקסטים fcf6ba (צהוב בהיר) — זהב כהה קריא */
+        [data-theme="light"] .topic-card h4,
+        [data-theme="light"] .faq-item h4,
+        [data-theme="light"] .testimonial-card .font-bold,
+        [data-theme="light"] p.font-bold {
+            color: #8a5e00 !important;
+            -webkit-text-fill-color: #8a5e00 !important;
+        }
+
+        /* "הצטרפו לחוויה שמשנה את השבוע" */
+        [data-theme="light"] .bg-black\/40 {
+            background: rgba(255,248,220,0.85) !important;
+        }
+        [data-theme="light"] .bg-black\/40 p {
+            color: #8a5e00 !important;
+            -webkit-text-fill-color: #8a5e00 !important;
+        }
+
+        /* "שעה אחת בשבוע" */
+        [data-theme="light"] .text-\[\#fcf6ba\] {
+            color: #8a5e00 !important;
+            -webkit-text-fill-color: #8a5e00 !important;
+        }
+
+        /* thank you page */
+        [data-theme="light"] #thankYou p.text-\[\#fcf6ba\] {
+            color: #8a5e00 !important;
+            -webkit-text-fill-color: #8a5e00 !important;
+        }
     </style>
 </head>
 <body>
@@ -354,8 +387,6 @@
                 <div class="space-y-3 text-right"><label class="text-xs text-[#bf953f] font-bold tracking-widest uppercase italic">מיקום</label><input type="text" name="location" required placeholder="איפה אתם בעולם?"></div>
                 <div class="pt-6"><button type="submit" class="w-full btn-gold py-8 rounded-2xl text-2xl md:text-3xl shadow-2xl uppercase tracking-[0.2em]">אני רוצה להתחיל ללמוד ←</button></div>
             </form>
-
-            <!-- דף תודה -->
             <div id="thankYou" style="display:none;" class="text-center py-10">
                 <div class="mb-10">
                     <div class="text-7xl mb-6">✨</div>
@@ -364,12 +395,8 @@
                 <h3 class="gold-text text-5xl md:text-6xl font-bold mb-6">אשריך!</h3>
                 <p class="text-[#fcf6ba] text-2xl font-bold mb-6 text-shadow-heavy">זכית לקבוע עתים לתורה</p>
                 <div class="gold-line w-48 mb-8"></div>
-                <p class="text-gray-300 text-xl font-light leading-relaxed mb-4 max-w-xl mx-auto">
-                    נציג מטעמנו יחזור אליך טלפונית בהקדם לתיאום הלימוד.
-                </p>
-                <p class="text-[#bf953f] text-lg italic mb-10">
-                    "לכל אחד יש ניצוץ בוער — עכשיו הגיע הזמן להפוך אותו לשלהבת"
-                </p>
+                <p class="text-gray-300 text-xl font-light leading-relaxed mb-4 max-w-xl mx-auto">נציג מטעמנו יחזור אליך טלפונית בהקדם לתיאום הלימוד.</p>
+                <p class="text-[#bf953f] text-lg italic mb-10">"לכל אחד יש ניצוץ בוער — עכשיו הגיע הזמן להפוך אותו לשלהבת"</p>
                 <div class="gold-line w-32 mb-10"></div>
                 <p class="text-gray-500 text-sm tracking-widest uppercase">בשורות טובות · נתיבות לזיכוי הרבים</p>
             </div>
@@ -399,7 +426,6 @@
 
 <script>
     function toggleFaq(item) { item.classList.toggle('open'); }
-
     function toggleTheme() {
         const html = document.documentElement;
         const isDark = html.getAttribute('data-theme') !== 'light';
@@ -407,17 +433,12 @@
         document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
         document.getElementById('themeLbl').textContent = isDark ? 'מצב כהה' : 'מצב בהיר';
     }
-
     document.getElementById('leadForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const form = this;
         const data = new FormData(form);
         try {
-            await fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
+            await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
         } catch(err) {}
         form.style.opacity = '0';
         form.style.transform = 'translateY(-20px)';
@@ -429,10 +450,7 @@
             ty.style.opacity = '0';
             ty.style.transform = 'translateY(20px)';
             ty.style.transition = 'all 0.6s ease';
-            setTimeout(() => {
-                ty.style.opacity = '1';
-                ty.style.transform = 'translateY(0)';
-            }, 50);
+            setTimeout(() => { ty.style.opacity = '1'; ty.style.transform = 'translateY(0)'; }, 50);
         }, 500);
     });
 </script>
