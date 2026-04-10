@@ -224,7 +224,7 @@
             <a href="#about">אודות</a>
         </div>
         <div class="flex items-center gap-2">
-            <span class="text-[#bf953f] font-bold text-lg" style="font-family:'Cinzel',serif;">נ</span>
+            <img src="logo.png" alt="נתיבות Netivot" style="width:40px;height:40px;object-fit:contain;">
             <span class="text-[9px] text-[#bf953f]/50 tracking-[0.3em] uppercase hidden md:block">נתיבות</span>
         </div>
     </div>
@@ -436,7 +436,6 @@
             await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
         } catch(err) {}
 
-        // תגית המרה - מופעלת רק אחרי מילוי טופס
         gtag('event', 'conversion', {'send_to': 'AW-944658564/sp7_ClKdi5IcElSxucID'});
 
         form.style.opacity = '0';
