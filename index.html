@@ -443,13 +443,7 @@
         form.style.transform = 'translateY(-20px)';
         form.style.transition = 'all 0.5s ease';
         setTimeout(() => {
-            form.style.display = 'none';
-            const ty = document.getElementById('thankYou');
-            ty.style.display = 'block';
-            ty.style.opacity = '0';
-            ty.style.transform = 'translateY(20px)';
-            ty.style.transition = 'all 0.6s ease';
-            setTimeout(() => { ty.style.opacity = '1'; ty.style.transform = 'translateY(0)'; }, 50);
+          window.location.href = '/thanks';
         }, 500);
     });
 </script>
