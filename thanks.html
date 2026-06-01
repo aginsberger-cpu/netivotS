@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Netivot NY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#06060a;
+  --gold:#c9a84c;
+  --gold2:#e8c870;
+  --cream:#f0ece0;
+  --muted:#7a7060;
+  --border:rgba(180,145,60,0.2);
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Rubik',sans-serif;
+}
+body{
+  background:var(--bg);
+  color:var(--cream);
+  font-family:var(--font-body);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+/* Stars background */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 50%);
+  pointer-events:none;
+}
+
+.card{
+  max-width:580px;
+  width:100%;
+  text-align:center;
+  position:relative;
+  animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Checkmark circle */
+.check-circle{
+  width:80px;height:80px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 2rem;
+  box-shadow:0 0 40px rgba(201,168,76,0.3);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 40px rgba(201,168,76,0.3)}
+  50%{box-shadow:0 0 60px rgba(201,168,76,0.5)}
+}
+.check-circle svg{
+  width:36px;height:36px;
+}
+
+/* Divider lines */
+.divider{
+  display:flex;align-items:center;gap:1rem;
+  margin:2rem 0;
+}
+.divider::before,.divider::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(to right,transparent,var(--border),transparent);
+}
+.divider span{
+  color:var(--gold);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+}
+
+/* Main title */
+h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,5vw,3.5rem);
+  font-weight:300;
+  color:var(--cream);
+  line-height:1.2;
+  margin-bottom:.5rem;
+}
+h1 em{
+  font-style:italic;
+  color:var(--gold2);
+}
+
+/* Subtitle */
+.subtitle{
+  font-size:.95rem;
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:2.5rem;
+}
+.subtitle strong{
+  color:var(--cream);
+  font-weight:400;
+}
+
+/* Info box */
+.info-box{
+  background:rgba(201,168,76,0.05);
+  border:1px solid var(--border);
+  padding:1.8rem 2rem;
+  margin-bottom:2rem;
+  position:relative;
+}
+.info-box::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);
+}
+.info-box p{
+  font-size:.88rem;
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:1rem;
+}
+.info-box p:last-child{margin:0}
+.info-box strong{color:var(--cream);font-weight:400;}
+
+/* CTA Button */
+.btn-gold{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#06060a;
+  padding:.9rem 2.5rem;
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  text-decoration:none;
+  font-family:var(--font-body);
+  transition:opacity .2s, transform .2s;
+  margin-bottom:1.2rem;
+}
+.btn-gold:hover{opacity:.88;transform:translateY(-1px)}
+
+/* Back link */
+.back-link{
+  display:block;
+  font-size:.75rem;
+  color:var(--muted);
+  text-decoration:none;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  transition:color .2s;
+}
+.back-link:hover{color:var(--gold)}
+
+/* Quote */
+.quote{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:1.1rem;
+  color:var(--muted);
+  margin-top:2.5rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+  line-height:1.7;
+}
+.quote-by{
+  font-family:var(--font-body);
+  font-size:.65rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-top:.5rem;
+}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Check circle -->
+  <div class="check-circle">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#06060a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  </div>
+
+  <!-- Title -->
+  <h1>Thank You for<br><em>Registering!</em></h1>
+
+  <div class="divider"><span>✦</span></div>
+
+  <!-- Subtitle -->
+  <p class="subtitle">
+    We have received your details.<br>
+    <strong>Someone from our team will be in touch with you within 24 hours</strong><br>
+    to connect you with the right Chavruta partner.
+  </p>
+
+  <!-- Info box -->
+  <div class="info-box">
+    <p>
+      <strong>What happens next?</strong><br>
+      We will carefully match you with a study partner based on your background, interests, and schedule.
+    </p>
+    <p>
+      No prior Jewish knowledge is required —<br>
+      just an open heart and genuine curiosity.
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <a href="https://tikva.netivotny.org" class="btn-gold">Explore Netivot NY →</a>
+  <br>
+  <a href="https://mosheginzy.netivotny.org" class="back-link">← Return to Moshe Ginzy</a>
+
+  <!-- Quote -->
+  <div class="quote">
+    "Every person is a world unto themselves."
+    <div class="quote-by">— Mishnah Sanhedrin</div>
+  </div>
+
+</div>
+</body>
+</html>
