@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>לימוד חברותא עם משה גינזי | נתיבות</title>
+<meta name="description" content="לימוד חברותא אישי עם משה גינזי — שבת, תפילה, חגים, אמונה ומסורת. ללא עלות, ללא שיפוטיות, בקצב שלך. פרויקט של ארגון נתיבות ניו יורק.">
+<link rel="icon" href="https://www.netivotny.org/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<style>
+    :root{
+        --gold:#bf953f;
+        --gold-light:#fcf6ba;
+        --gold-deep:#aa771c;
+        --ink:#020202;
+        --cream:#fdf8f0;
+    }
+    *{box-sizing:border-box;}
+    body{
+        font-family:'Assistant',sans-serif;
+        margin:0;
+        color:#fff;
+        background:
+            radial-gradient(circle at 50% 15%, rgba(191,149,63,0.22) 0%, transparent 60%),
+            radial-gradient(circle at 0% 100%, rgba(191,149,63,0.10) 0%, transparent 40%),
+            radial-gradient(circle at 100% 100%, rgba(191,149,63,0.10) 0%, transparent 40%),
+            var(--ink);
+        min-height:100vh;
+    }
+    a{color:inherit;}
+    .wrap{max-width:980px;margin:0 auto;padding:0 20px;}
+
+    /* ---------- header ---------- */
+    header{
+        display:flex;align-items:center;justify-content:space-between;
+        padding:18px 0;border-bottom:1px solid rgba(191,149,63,0.25);
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .brand img{height:46px;width:auto;}
+    .brand .org{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.25em;color:var(--gold-light);}
+    .back-link{
+        font-size:.95rem;color:var(--gold-light);text-decoration:none;
+        border:1px solid rgba(191,149,63,0.5);border-radius:999px;padding:7px 18px;
+        transition:background .2s;white-space:nowrap;
+    }
+    .back-link:hover{background:rgba(191,149,63,0.15);}
+
+    /* ---------- hero ---------- */
+    .hero{text-align:center;padding:52px 0 24px;}
+    .eyebrow{
+        font-size:.95rem;letter-spacing:.2em;color:var(--gold);
+        text-transform:uppercase;margin-bottom:14px;
+    }
+    h1{
+        font-weight:700;font-size:clamp(1.9rem,5vw,3rem);
+        margin:0 0 10px;line-height:1.25;
+        background:linear-gradient(180deg,var(--gold-light) 0%,var(--gold) 70%);
+        -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .sub{
+        font-size:clamp(1.05rem,2.6vw,1.35rem);color:#e9e2d2;
+        font-weight:300;margin:0 auto 8px;max-width:640px;line-height:1.7;
+    }
+    .topics{color:var(--gold-light);font-size:1.05rem;letter-spacing:.06em;margin-bottom:34px;}
+
+    /* ---------- main video ---------- */
+    .hero-video{
+        position:relative;max-width:760px;margin:0 auto;
+        border-radius:18px;padding:5px;
+        background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 45%,var(--gold-deep) 100%);
+        box-shadow:0 18px 60px rgba(191,149,63,0.35), 0 6px 24px rgba(0,0,0,0.6);
+    }
+    .hero-video video{
+        display:block;width:100%;border-radius:14px;background:#000;
+    }
+
+    /* ---------- CTA ---------- */
+    .btn-gold{
+        display:inline-block;text-decoration:none;
+        font-weight:700;font-size:1.15rem;letter-spacing:.08em;
+        color:#1a1000;border-radius:999px;padding:16px 46px;
+        background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold-deep) 100%);
+        box-shadow:0 8px 26px rgba(191,149,63,0.45);
+        transition:transform .15s, box-shadow .15s;
+    }
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(191,149,63,0.6);}
+    .cta-row{text-align:center;margin:36px 0 8px;}
+    .cta-note{color:#cfc6ae;font-size:.95rem;margin-top:12px;}
+
+    /* ---------- about ---------- */
+    section{padding:46px 0;}
+    .divider{
+        width:120px;height:1px;margin:0 auto;
+        background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    }
+    h2{
+        text-align:center;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;
+        color:var(--gold-light);margin:0 0 22px;
+    }
+    .about-text{
+        max-width:720px;margin:0 auto;text-align:center;
+        font-size:1.12rem;font-weight:300;line-height:1.95;color:#efe9da;
+    }
+    .about-text b{color:var(--gold-light);font-weight:600;}
+
+    /* ---------- video grid ---------- */
+    .grid{
+        display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px;
+    }
+    .card{
+        border-radius:14px;padding:3px;
+        background:linear-gradient(135deg,rgba(191,149,63,.8),rgba(170,119,28,.8));
+        box-shadow:0 8px 28px rgba(0,0,0,0.55);
+    }
+    .card-inner{background:#0a0a0a;border-radius:12px;overflow:hidden;}
+    .card video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;}
+    .card-title{
+        padding:12px 14px 16px;text-align:center;font-size:1.02rem;
+        color:var(--gold-light);font-weight:600;min-height:58px;
+        display:flex;align-items:center;justify-content:center;
+    }
+    .yt-row{text-align:center;margin-top:30px;}
+    .yt-link{
+        display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+        color:var(--gold-light);font-size:1.05rem;
+        border:1px solid rgba(191,149,63,0.5);border-radius:999px;padding:11px 26px;
+        transition:background .2s;
+    }
+    .yt-link:hover{background:rgba(191,149,63,0.15);}
+
+    /* ---------- footer ---------- */
+    footer{
+        border-top:1px solid rgba(191,149,63,0.25);
+        padding:34px 0 90px;text-align:center;
+        color:#bfb699;font-size:.95rem;line-height:1.9;
+    }
+    footer a{color:var(--gold-light);text-decoration:none;}
+    footer a:hover{text-decoration:underline;}
+
+    /* ---------- whatsapp float ---------- */
+    .whatsapp-float{
+        position:fixed;bottom:22px;left:22px;z-index:50;
+        width:58px;height:58px;border-radius:50%;
+        background:#25d366;display:flex;align-items:center;justify-content:center;
+        box-shadow:0 6px 20px rgba(0,0,0,.5);transition:transform .15s, background .15s;
+    }
+    .whatsapp-float:hover{transform:scale(1.1);background:#128c7e;}
+    .whatsapp-float svg{width:30px;height:30px;fill:#fff;}
+
+    @media (max-width:760px){
+        .grid{grid-template-columns:1fr;max-width:340px;margin-inline:auto;}
+        header{flex-direction:column;gap:12px;}
+    }
+
+    /* ---------- theme toggle (כמו בנתיבות) ---------- */
+    .theme-toggle{
+        position:fixed;top:14px;left:14px;z-index:200;
+        background:rgba(191,149,63,0.15);
+        border:1px solid rgba(191,149,63,0.5);
+        border-radius:50px;padding:8px 16px;
+        display:flex;align-items:center;gap:6px;
+        cursor:pointer;font-family:'Assistant',sans-serif;
+        font-size:.75rem;font-weight:700;
+        color:#bf953f;letter-spacing:.05em;
+        transition:all .3s;backdrop-filter:blur(10px);
+    }
+    .theme-toggle:hover{border-color:#fcf6ba;background:rgba(191,149,63,0.25);}
+
+    /* ---------- מצב בהיר — אותם צבעים כמו נתיבות ---------- */
+    [data-theme="light"] body{
+        background:
+            radial-gradient(circle at 50% 20%, rgba(191,149,63,0.12) 0%, transparent 60%),
+            radial-gradient(circle at 0% 100%, rgba(191,149,63,0.06) 0%, transparent 40%),
+            #fdf8f0;
+        color:#1a1000;
+    }
+    [data-theme="light"] h1{
+        background:linear-gradient(to right,#c47f00,#f0b015,#8a5a00,#f5c518,#c47f00);
+        -webkit-background-clip:text;background-clip:text;color:transparent;
+        filter:drop-shadow(0 3px 8px rgba(180,120,0,0.35));
+    }
+    [data-theme="light"] h2{color:#8a5e00;}
+    [data-theme="light"] .sub,
+    [data-theme="light"] .about-text{color:#3a2800;}
+    [data-theme="light"] .about-text b{color:#8a5e00;}
+    [data-theme="light"] .topics{color:#8a5e00;}
+    [data-theme="light"] .eyebrow{color:#aa771c;}
+    [data-theme="light"] .cta-note{color:#7a5500;}
+    [data-theme="light"] .back-link,
+    [data-theme="light"] .yt-link{color:#8a5e00;border-color:rgba(191,149,63,0.5);}
+    [data-theme="light"] .back-link:hover,
+    [data-theme="light"] .yt-link:hover{background:rgba(191,149,63,0.12);}
+    [data-theme="light"] .brand .org{color:#8a5e00;}
+    [data-theme="light"] header,
+    [data-theme="light"] footer{border-color:rgba(191,149,63,0.35);}
+    [data-theme="light"] footer{color:#7a5500;}
+    [data-theme="light"] footer a{color:#8a5e00;}
+    [data-theme="light"] .card-inner{background:rgba(255,248,235,0.95);}
+    [data-theme="light"] .card-title{color:#8a5e00;}
+</style>
+
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','3171269369843152');fbq('track','PageView');
+</script>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()">
+    <span id="themeIcon">☀️</span>
+    <span id="themeLbl">מצב בהיר</span>
+</button>
+
+<div class="wrap">
+    <header>
+        <a class="brand" href="https://www.netivotny.org/">
+            <img src="https://www.netivotny.org/logo.png" alt="נתיבות Netivot">
+            <span class="org">NETIVOT&nbsp;ORGANIZATION</span>
+        </a>
+        <a class="back-link" href="https://www.netivotny.org/">← לאתר נתיבות</a>
+    </header>
+
+    <div class="hero">
+        <div class="eyebrow">אוכל לנשמה · לימוד חברותא אישי</div>
+        <h1>לימוד חברותא עם משה גינזי</h1>
+        <p class="sub">שעה אחת בשבוע של עומק, שקט ומשמעות — לימוד אישי אחד-על-אחד, בטלפון או במפגש, בדיוק בקצב שלך.</p>
+        <div class="topics">שבת · תפילה · חגים · אמונה · מסורת</div>
+
+        <div class="hero-video">
+            <video controls preload="metadata" poster="invite.jpg" playsinline>
+                <source src="invite2.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="cta-row">
+            <a class="btn-gold" href="https://www.netivotny.org/#contact">אני רוצה לקבוע חברותא ←</a>
+            <div class="cta-note">ללא עלות · ללא שיפוטיות · בקצב שלך</div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <section>
+        <h2>מי זה משה גינזי?</h2>
+        <p class="about-text">
+            משה גינזי הוא איש חינוך ומרצה ליהדות, שמלמד תורה בגובה העיניים — בחום, בהומור ובלי שיפוטיות.
+            בסרטונים הקצרים שלו ובלימוד החברותא האישי הוא מחבר בין חוכמת המסורת היהודית לחיי היומיום:
+            זוגיות, עבודה, הורות, שקט נפשי ואמונה.
+            <br><br>
+            הלימוד מתקיים במסגרת <b>ארגון נתיבות</b> (Congregation Netivot of New York) —
+            עמותה ללא מטרות רווח שמחברת אלפי לומדים לחברותות אישיות, ללא עלות וללא צורך ברקע קודם.
+            כל מה שצריך זה לב פתוח וסקרנות אמיתית.
+        </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+        <h2>טעימה מהשיעורים</h2>
+        <div class="grid">
+            <div class="card"><div class="card-inner">
+                <video controls preload="none" poster="https://mosheginzy.com/pilot.jpg" playsinline>
+                    <source src="https://mosheginzy.com/pilot.mp4" type="video/mp4">
+                </video>
+                <div class="card-title">למה אתם מנסים לנהל את הטייס? ✈️</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <video controls preload="none" poster="https://mosheginzy.com/shabbat.jpg" playsinline>
+                    <source src="https://mosheginzy.com/shabbat.mp4" type="video/mp4">
+                </video>
+                <div class="card-title">הנוסחה הדיגיטלית והשקט של שבת</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <video controls preload="none" poster="https://mosheginzy.com/keys.jpg" playsinline>
+                    <source src="https://mosheginzy.com/keys.mp4" type="video/mp4">
+                </video>
+                <div class="card-title">איפה המפתחות שלי 🔑</div>
+            </div></div>
+        </div>
+        <div class="yt-row">
+            <a class="yt-link" href="https://www.youtube.com/@MosheGinzy" target="_blank" rel="noopener">
+                ▶ לעוד שיעורים — ערוץ היוטיוב של משה גינזי
+            </a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section style="text-align:center;">
+        <h2>מוכנים להתחיל?</h2>
+        <p class="about-text" style="margin-bottom:28px;">
+            ממלאים פרטים בטופס — ותוך 24 שעות חוזרים אליכם לתיאום חברותא אישית עם משה,
+            בנושא שהכי קרוב ללב שלכם.
+        </p>
+        <a class="btn-gold" href="https://www.netivotny.org/#contact">לקביעת חברותא — לחצו כאן</a>
+    </section>
+</div>
+
+<footer>
+    <div class="wrap">
+        פרויקט של <a href="https://www.netivotny.org/">ארגון נתיבות — Congregation Netivot of New York Inc.</a><br>
+        עמותה רשומה ללא מטרות רווח 501(c)(3) · הלימוד ניתן ללא עלות, לשם שמיים<br>
+        לאתר המלא של משה גינזי: <a href="https://mosheginzy.com" target="_blank" rel="noopener">mosheginzy.com</a>
+    </div>
+</footer>
+
+<a href="https://wa.me/17189540286?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%97%D7%91%D7%A8%D7%95%D7%AA%D7%90%20%D7%A2%D7%9D%20%D7%9E%D7%A9%D7%94%20%D7%92%D7%99%D7%A0%D7%96%D7%99" class="whatsapp-float" target="_blank" rel="noopener" aria-label="וואטסאפ">
+    <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.6.8 5 2.3 7L4 29l7.2-2.3c1.9 1 4 1.6 6.3 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm6.6 17c-.3.8-1.6 1.5-2.3 1.6-.6.1-1.3.2-2.2-.1-.5-.2-1.2-.4-2-.8-3.5-1.5-5.8-5-6-5.3-.2-.2-1.4-1.9-1.4-3.6s.9-2.5 1.2-2.9c.3-.3.7-.4 1-.4h.7c.2 0 .5-.1.8.6.3.8 1 2.7 1.1 2.9.1.2.2.4 0 .7-.1.2-.2.4-.4.6l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.2 1-1.1 1.2-1.5.3-.4.5-.3.9-.2.4.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.1.1.8-.2 1.6z"/></svg>
+</a>
+
+<script>
+    function toggleTheme(){
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') !== 'light';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+        document.getElementById('themeLbl').textContent = isDark ? 'מצב כהה' : 'מצב בהיר';
+    }
+</script>
+
+</body>
+</html>
