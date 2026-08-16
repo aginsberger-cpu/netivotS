@@ -3,107 +3,366 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>אודות ארגון נתיבות | Netivot Organization</title>
-<meta name="description" content="ארגון נתיבות - 27 שנות חיבור לשורשים">
+<title>אודות ארגון נתיבות | About Netivot</title>
+<meta name="description" content="ארגון נתיבות - 27 שנות חיבור יהודים לשורשים. עמותה 501(c)(3).">
 <link rel="icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
-<style>*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#060a1e;--bg2:#0a1028;--bg-glass:rgba(10,16,40,0.6);--border-glass:rgba(201,168,76,0.12);--border-glass2:rgba(255,255,255,0.06);--gold:#c9a84c;--gold-light:#dfc06a;--gold-dim:#8a7535;--text:#eae6de;--text-dim:#a09888}
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#060a1e;--bg2:#0a1028;--bg3:#0d1433;
+--bg-glass:rgba(10,16,40,0.55);--bg-glass2:rgba(10,16,40,0.35);
+--border-glass:rgba(201,168,76,0.12);--border-glass2:rgba(255,255,255,0.06);
+--gold:#c9a84c;--gold-light:#dfc06a;--gold-dim:#8a7535;--gold-glow:rgba(201,168,76,0.15);
+--text:#eae6de;--text-dim:#a09888;--text-light:rgba(255,255,255,0.5);
+--radius:16px;--radius-sm:12px;
+}
+/* LIGHT MODE */
+html.light{
+--bg:#f4f1ec;--bg2:#eae7e0;--bg3:#e0ddd6;
+--bg-glass:rgba(255,255,255,0.65);--bg-glass2:rgba(255,255,255,0.4);
+--border-glass:rgba(201,168,76,0.2);--border-glass2:rgba(0,0,0,0.06);
+--text:#1a1a2e;--text-dim:#5a5a6e;--text-light:rgba(0,0,0,0.45);
+}
+html.light .nav{background:rgba(244,241,236,.94)!important}
+html.light .hero-overlay{background:linear-gradient(180deg,rgba(244,241,236,.7) 0%,rgba(244,241,236,.35) 40%,rgba(244,241,236,.35) 60%,rgba(244,241,236,.75) 100%)!important}
+html.light .section-title,html.light .topic-card h4,html.light .faq-q,html.light .page-hero h1{color:var(--bg)!important}
+html.light .footer{background:var(--bg2)}
+
+/* LANGUAGE */
+html[lang="he"] .en{display:none!important}
+html[lang="en"] .he{display:none!important}
+html[lang="en"]{direction:ltr}
+html[lang="en"] .nav{flex-direction:row-reverse}
+html[lang="en"] .nav-links{flex-direction:row-reverse}
+html[lang="en"] .nav-right{flex-direction:row-reverse}
+
 html{scroll-behavior:smooth}
-body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
-.nav{position:fixed;top:0;right:0;left:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,10,30,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-glass)}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden;transition:background .4s,color .4s}
+
+/* NAV */
+.nav{position:fixed;top:0;right:0;left:0;z-index:100;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,10,30,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border-glass);transition:background .4s}
 .nav-right{display:flex;align-items:center;gap:10px}
-.nav-logo-img{height:36px;width:auto}
-.nav-logo-text{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:1.1rem;color:var(--text-dim);text-decoration:none}
-.nav-links{display:flex;gap:24px;align-items:center}
-.nav-links a{color:var(--text-dim);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .3s}
-.nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light))!important;color:var(--bg)!important;padding:10px 26px;border-radius:40px;font-weight:700!important;font-size:.88rem!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{width:24px;height:2px;background:var(--gold);border-radius:2px}
-.page-hero{padding:140px 24px 80px;text-align:center;position:relative}
-.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.06),transparent 60%)}
-.page-badge{display:inline-block;color:var(--gold);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
-.page-hero h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:16px}
-.page-hero p{font-size:1.1rem;color:var(--text-dim);max-width:600px;margin:0 auto;line-height:1.8}
-section{padding:80px 24px}
-.container{max-width:1000px;margin:0 auto}
-.section-badge{display:inline-block;color:var(--gold);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
-.section-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:#fff;margin-bottom:16px}
-.glass-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:16px;padding:32px 24px;transition:transform .3s,border-color .3s}
-.glass-card:hover{transform:translateY(-4px);border-color:var(--gold)}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--bg);padding:14px 36px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-block;transition:transform .3s,box-shadow .3s;border:none;cursor:pointer}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,168,76,.3)}
-.footer{border-top:1px solid var(--border-glass);padding:48px 24px 32px;text-align:center}
-.footer-brand{font-family:'Frank Ruhl Libre',serif;font-size:1.3rem;font-weight:900;color:var(--gold);margin-bottom:8px}
-.footer-tagline{font-size:.85rem;color:var(--text-dim);margin-bottom:20px}
-.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
-.footer-links a{color:var(--text-dim);text-decoration:none;font-size:.85rem;transition:color .3s}
+.nav-logo-img{height:34px;width:auto}
+.nav-logo-text{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:1.05rem;color:var(--gold);text-decoration:none;letter-spacing:1px}
+.nav-center{display:flex;gap:20px;align-items:center}
+.nav-center a{color:var(--text-dim);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .3s;padding:6px 2px;border-bottom:2px solid transparent}
+.nav-center a:hover,.nav-center a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-left{display:flex;align-items:center;gap:10px}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#060a1e!important;padding:9px 22px;border-radius:40px;font-weight:700;font-size:.85rem;text-decoration:none;transition:box-shadow .3s,transform .3s;border:none;cursor:pointer}
+.nav-cta:hover{box-shadow:0 4px 24px var(--gold-glow);transform:translateY(-1px)}
+.toggle-btn{background:var(--bg-glass);border:1px solid var(--border-glass);border-radius:20px;padding:5px 10px;cursor:pointer;color:var(--text-dim);font-size:.75rem;font-family:'Heebo';transition:all .3s}
+.toggle-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--gold);border-radius:2px;transition:all .3s}
+
+/* WHATSAPP FAB */
+.wa-fab{position:fixed;bottom:24px;left:24px;z-index:200;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);text-decoration:none;transition:transform .3s;animation:fabPulse 3s ease-in-out infinite}
+.wa-fab:hover{transform:scale(1.1);animation:none}
+.wa-fab svg{width:26px;height:26px;fill:#fff}
+@keyframes fabPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35)}50%{box-shadow:0 4px 32px rgba(37,211,102,.55)}}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:200;width:0%;transition:width .1s}
+
+/* BG ORBS */
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.06;animation:orbFloat 20s ease-in-out infinite alternate}
+.orb-1{width:500px;height:500px;background:radial-gradient(circle,#1a3a8a,transparent);top:-10%;right:-10%;animation-duration:25s}
+.orb-2{width:350px;height:350px;background:radial-gradient(circle,#c9a84c,transparent);bottom:20%;left:-5%;animation-duration:18s;animation-delay:-5s}
+@keyframes orbFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.1)}100%{transform:translate(-20px,20px) scale(.95)}}
+html.light .orb{opacity:.03}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.25s}
+.reveal-d4{transition-delay:.3s}.reveal-d5{transition-delay:.35s}.reveal-d6{transition-delay:.4s}
+
+/* SECTIONS */
+section{padding:90px 24px;position:relative;z-index:1}
+.container{max-width:1100px;margin:0 auto}
+.section-badge{display:inline-block;color:var(--gold);font-size:.78rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+.section-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;color:#fff;margin-bottom:14px}
+.section-sub{font-size:1rem;color:var(--text-dim);max-width:580px;margin-bottom:44px;line-height:1.8}
+.text-center{text-align:center}
+.text-center .section-sub{margin-inline:auto}
+.section-alt{background:var(--bg2)}
+.section-alt2{background:var(--bg3)}
+
+/* GLASS CARD */
+.glass-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:32px 24px;transition:transform .4s,border-color .4s,box-shadow .4s}
+.glass-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 12px 40px var(--gold-glow)}
+
+/* BUTTONS */
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#060a1e;padding:15px 36px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;transition:transform .3s,box-shadow .3s;border:none;cursor:pointer;display:inline-block;position:relative;overflow:hidden}
+.btn-gold::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}
+.btn-gold:hover::after{left:120%}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px var(--gold-glow)}
+.btn-outline{border:1px solid var(--border-glass);background:var(--bg-glass);backdrop-filter:blur(8px);color:var(--gold);padding:15px 32px;border-radius:50px;text-decoration:none;font-weight:600;font-size:.95rem;transition:border-color .3s,box-shadow .3s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);box-shadow:0 0 24px var(--gold-glow)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border-glass);padding:48px 24px 28px;text-align:center;position:relative;z-index:1}
+.footer-brand{font-family:'Frank Ruhl Libre',serif;font-size:1.3rem;font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:6px}
+.footer-tagline{font-size:.82rem;color:var(--text-dim);margin-bottom:20px}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.footer-links a{color:var(--text-dim);text-decoration:none;font-size:.82rem;transition:color .3s}
 .footer-links a:hover{color:var(--gold)}
-.footer-copy{font-size:.75rem;color:var(--text-dim);opacity:.6}
-@media(max-width:768px){.nav{padding:12px 16px}.nav-links{display:none;position:absolute;top:60px;right:0;left:0;background:rgba(6,10,30,.97);backdrop-filter:blur(20px);flex-direction:column;padding:24px;gap:14px;border-bottom:1px solid var(--border-glass)}.nav-links.open{display:flex}.hamburger{display:flex}.grid-2{grid-template-columns:1fr!important}.grid-3{grid-template-columns:1fr!important}.grid-4{grid-template-columns:repeat(2,1fr)!important}}
+.footer-app{display:inline-block;margin-top:6px;border:1px solid var(--border-glass);padding:9px 22px;border-radius:40px;color:var(--gold);text-decoration:none;font-size:.85rem;transition:border-color .3s}
+.footer-app:hover{border-color:var(--gold)}
+.footer-copy{font-size:.72rem;color:var(--text-dim);opacity:.5;margin-top:18px}
+
+/* PAGE HERO (inner pages) */
+.page-hero{padding:130px 24px 70px;text-align:center;position:relative}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.05),transparent 60%)}
+.page-hero h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;color:#fff;margin-bottom:14px}
+.page-hero p{font-size:1.05rem;color:var(--text-dim);max-width:580px;margin:0 auto;line-height:1.8}
+.page-badge{display:inline-block;color:var(--gold);font-size:.78rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+
+/* GRIDS */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.text-center{text-align:center}
-.stat-num{font-family:'Frank Ruhl Libre',serif;font-size:2.4rem;font-weight:900;color:var(--gold);margin-bottom:4px}
-.stat-label{font-size:.85rem;color:var(--text-dim)}
-.icon{font-size:2rem;margin-bottom:12px}
-.section-alt{background:var(--bg2)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+/* STAT CARD */
+.stat-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:28px 16px;text-align:center;transition:transform .4s,border-color .4s}
+.stat-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.stat-num{font-family:'Frank Ruhl Libre',serif;font-size:2.2rem;font-weight:900;color:var(--gold);margin-bottom:4px}
+.stat-label{font-size:.82rem;color:var(--text-dim)}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border:1px solid var(--border-glass);border-radius:14px;margin-bottom:10px;overflow:hidden;background:var(--bg-glass);backdrop-filter:blur(14px);transition:border-color .3s}
+.faq-item:hover{border-color:rgba(201,168,76,.2)}
+.faq-q{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:#fff;font-size:.95rem;transition:color .3s}
+.faq-q:hover{color:var(--gold)}
+.faq-q::after{content:'▾';color:var(--gold);font-size:1.1rem;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1),padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 18px}
+.faq-a p{font-size:.9rem;color:var(--text-dim);line-height:1.8}
+
+/* TESTIMONIAL */
+.testimonial-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:28px 24px;position:relative;transition:transform .4s,border-color .4s}
+.testimonial-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.testimonial-card::before{content:'"';font-family:'Frank Ruhl Libre',serif;font-size:3.5rem;color:var(--gold);opacity:.2;position:absolute;top:10px;right:18px;line-height:1}
+.testimonial-card p{font-size:.92rem;color:var(--text);margin-bottom:16px;position:relative;z-index:1;line-height:1.8}
+.t-author{font-weight:700;color:var(--gold);font-size:.88rem}
+.t-role{font-size:.78rem;color:var(--text-dim)}
+
+/* TOPIC CARD */
+.topic-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:32px 24px;transition:transform .4s,border-color .4s,box-shadow .4s}
+.topic-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 12px 40px var(--gold-glow)}
+.topic-icon{font-size:2rem;margin-bottom:12px;display:block}
+.topic-card h4{font-family:'Frank Ruhl Libre',serif;font-size:1.1rem;color:#fff;margin-bottom:8px}
+.topic-card p{font-size:.88rem;color:var(--text-dim);line-height:1.7}
+
+/* CONTACT */
+.contact-box{background:var(--bg-glass);backdrop-filter:blur(20px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:40px 36px;max-width:500px;margin:0 auto}
+.contact-box input,.contact-box textarea{width:100%;padding:14px 16px;border-radius:var(--radius-sm);border:1px solid var(--border-glass);background:rgba(6,10,30,.4);color:var(--text);font-family:'Heebo';font-size:.92rem;margin-bottom:12px;outline:none;transition:border-color .3s}
+html.light .contact-box input,html.light .contact-box textarea{background:rgba(255,255,255,.5)}
+.contact-box input:focus,.contact-box textarea:focus{border-color:var(--gold)}
+.contact-box input::placeholder,.contact-box textarea::placeholder{color:var(--text-dim)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav{padding:10px 16px}
+.nav-center{display:none;position:absolute;top:58px;right:0;left:0;background:rgba(6,10,30,.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:12px;border-bottom:1px solid var(--border-glass)}
+html.light .nav-center{background:rgba(244,241,236,.97)}
+.nav-center.open{display:flex}
+.hamburger{display:flex}
+.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+.grid-4{grid-template-columns:repeat(2,1fr)}
+.hero-title{font-size:clamp(2.4rem,9vw,3.5rem)!important}
+.contact-box{padding:28px 18px}
+.orb{opacity:.03}
+.toggle-btn{padding:4px 8px;font-size:.7rem}
+}
+
+
 </style>
 </head>
 <body>
-<nav class="nav">
-<a href="index.html#contact" class="nav-cta">קבעו חברותא</a>
-<div class="nav-links">
-<a href="index.html">בית</a><a href="about.html" class="active">אודות</a><a href="programs.html" >תוכניות</a><a href="impact.html" >השפעה</a><a href="contact.html" >צור קשר</a>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+
+<a href="https://wa.me/972584094045?text=%D7%A9%D7%9C%D7%95%D7%9D%2C+%D7%90%D7%A9%D7%9E%D7%97+%D7%9C%D7%A9%D7%9E%D7%95%D7%A2+%D7%A4%D7%A8%D7%98%D7%99%D7%9D+%D7%A2%D7%9C+%D7%97%D7%91%D7%A8%D7%95%D7%AA%D7%90" target="_blank" class="wa-fab">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav class="nav" id="nav">
+<div class="nav-left">
+<a href="contact.html" class="nav-cta"><span class="he">קבעו חברותא</span><span class="en">Book Chavruta</span></a>
 </div>
-<div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
-<div class="nav-right"><a href="index.html" class="nav-logo-text">נתיבות</a><img src="logo.png" alt="נתיבות" class="nav-logo-img"></div>
+<div class="nav-center" id="navLinks"><a href="index.html"><span class="he">🏠 בית</span><span class="en">🏠 Home</span></a><a href="about.html" class="active"><span class="he">ℹ️ אודות</span><span class="en">ℹ️ About</span></a><a href="programs.html"><span class="he">📋 תוכניות</span><span class="en">📋 Programs</span></a><a href="faq.html"><span class="he">❓ שאלות נפוצות</span><span class="en">❓ FAQ</span></a><a href="topics.html"><span class="he">📚 נושאי לימוד</span><span class="en">📚 Topics</span></a><a href="contact.html"><span class="he">📞 צור קשר</span><span class="en">📞 Contact</span></a></div>
+<button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+<div class="nav-right">
+<button class="toggle-btn" onclick="toggleLang()" id="langBtn">EN</button>
+<button class="toggle-btn" onclick="toggleTheme()" id="themeBtn">☀️</button>
+<a href="index.html" class="nav-logo-text">נתיבות</a><a href="index.html"><img src="logo.png" alt="נתיבות" class="nav-logo-img"></a>
+</div>
 </nav>
-<header class="page-hero"><div class="page-badge">About Us</div><h1>27 שנה של חיבור לשורשים</h1><p>ארגון נתיבות הוקם מתוך אמונה פשוטה: שכל יהודי ראוי לגשת למורשת שלו — בלי מחיר, בלי לחץ, ובלי שיפוטיות.</p></header>
+
+<header class="page-hero">
+<div class="page-badge"><span class="he">אודות הארגון</span><span class="en">About Us</span></div>
+<h1><span class="he">27 שנה של חיבור לשורשים</span><span class="en">27 Years of Connecting to Roots</span></h1>
+<p><span class="he">ארגון נתיבות הוקם מתוך אמונה פשוטה: שכל יהודי ראוי לגשת למורשת שלו — בלי מחיר, בלי לחץ, ובלי שיפוטיות.</span><span class="en">Netivot Organization was founded on a simple belief: every Jew deserves access to their heritage — free, pressure-free, and non-judgmental.</span></p>
+</header>
 
 <section>
 <div class="container">
-<div class="grid-2">
+<div class="grid-2 reveal" style="gap:40px;align-items:center">
 <div>
-<span class="section-badge">הסיפור שלנו</span>
-<h2 class="section-title">מאז 1999 ועד היום</h2>
-<p style="color:var(--text-dim);margin-bottom:18px">ארגון נתיבות של ניו יורק (Congregation Netivot of New York Inc.) הוא ארגון ללא מטרות רווח (501(c)(3)) שפועל כבר למעלה מ-27 שנה בשליחות אחת ברורה: <strong style="color:var(--gold)">לחבר יהודים לשורשים שלהם.</strong></p>
-<p style="color:var(--text-dim);margin-bottom:18px">מה שהתחיל כמפגשי חברותא קטנים הפך לתנועה של אלפי אנשים שמגלים מחדש את העושר שבמסורת היהודית.</p>
-<p style="color:var(--text-dim)">היום, עם פלטפורמת משה גינזי ורשת החברותות שלנו, אנחנו מגיעים לכל יהודי בכל מקום.</p>
+<span class="section-badge"><span class="he">הסיפור שלנו</span><span class="en">Our Story</span></span>
+<h2 class="section-title"><span class="he">מאז 1999 ועד היום</span><span class="en">From 1999 to Today</span></h2>
+<p style="color:var(--text-dim);margin-bottom:16px"><span class="he">ארגון נתיבות (Congregation Netivot of New York Inc.) נוסד בשנת 1999 כעמותה רשומה 501(c)(3) במדינת ניו ג'רזי. מאז, הארגון מחבר יהודים מכל הרקעים למסורת שלהם דרך לימוד חברותא אישי — אחד על אחד, בטלפון או במפגש, בזמן שנוח ללומד.</span><span class="en">Netivot Organization (Congregation Netivot of New York Inc.) was founded in 1999 as a registered 501(c)(3) nonprofit in New Jersey. Since then, the organization connects Jews from all backgrounds to their heritage through personal chavruta (study partner) learning — one-on-one, by phone or in person, at the learner's convenience.</span></p>
+<p style="color:var(--text-dim)"><span class="he">הארגון הוקם על ידי אנשים שהאמינו שלימוד תורה צריך להיות נגיש לכולם. מה שהתחיל כקבוצת מתנדבים קטנה, הפך לארגון בינלאומי עם מאות חברותות פעילות בארץ ובעולם.</span><span class="en">Founded by people who believed Torah learning should be accessible to everyone. What started as a small group of volunteers has grown into an international organization with hundreds of active chavrutas across Israel and worldwide.</span></p>
 </div>
-<div class="glass-card" style="text-align:center">
-<div class="stat-num">27+</div><div class="stat-label">שנות פעילות</div>
-<div class="stat-num" style="margin-top:20px">1,500+</div><div class="stat-label">חברותות פעילות</div>
-<div class="stat-num" style="margin-top:20px">100%</div><div class="stat-label">לשם שמיים</div>
+<div class="glass-card" style="text-align:center;padding:40px 28px">
+<div class="stat-num" style="font-size:3rem">27+</div>
+<div style="color:var(--gold);font-weight:700;font-size:1.1rem;margin-bottom:12px"><span class="he">שנות פעילות רצופות</span><span class="en">Years of Continuous Activity</span></div>
+<p style="color:var(--text-dim);font-size:.9rem"><span class="he">מאז 1999 — בלי הפסקה, בלי פשרות, רק חיבור אנושי אמיתי למסורת.</span><span class="en">Since 1999 — without pause, without compromise, just genuine human connection to tradition.</span></p>
 </div>
 </div>
 </div>
 </section>
+
 <section class="section-alt">
 <div class="container text-center">
-<span class="section-badge">הערכים שלנו</span>
-<h2 class="section-title">העקרונות שמנחים אותנו</h2>
-<div class="grid-4" style="margin-top:32px">
-<div class="glass-card" style="text-align:center"><div class="icon">🤝</div><h3 style="color:#fff;font-size:1rem;margin-bottom:8px">ללא שיפוטיות</h3><p style="font-size:.85rem;color:var(--text-dim)">אנחנו לא כאן לשנות אותך. אתה מחליט מה לקחת.</p></div>
-<div class="glass-card" style="text-align:center"><div class="icon">🎁</div><h3 style="color:#fff;font-size:1rem;margin-bottom:8px">חינם לגמרי</h3><p style="font-size:.85rem;color:var(--text-dim)">אין תשלום, אין מנוי, אין הפתעות.</p></div>
-<div class="glass-card" style="text-align:center"><div class="icon">🕯️</div><h3 style="color:#fff;font-size:1rem;margin-bottom:8px">מדליקים אור</h3><p style="font-size:.85rem;color:var(--text-dim)">בלי הטפה, בלי לחץ.</p></div>
-<div class="glass-card" style="text-align:center"><div class="icon">👤</div><h3 style="color:#fff;font-size:1rem;margin-bottom:8px">התאמה אישית</h3><p style="font-size:.85rem;color:var(--text-dim)">כל חברותא מותאמת לך אישית.</p></div>
+<span class="section-badge reveal"><span class="he">הערכים שלנו</span><span class="en">Our Values</span></span>
+<h2 class="section-title reveal"><span class="he">העקרונות שמנחים אותנו</span><span class="en">Our Guiding Principles</span></h2>
+<div class="grid-3" style="margin-top:36px">
+<div class="glass-card reveal reveal-d1" style="text-align:center">
+<div style="font-size:2rem;margin-bottom:12px">💛</div>
+<h4 style="color:#fff;font-size:1.05rem;margin-bottom:8px;font-family:'Frank Ruhl Libre',serif"><span class="he">ללא שיפוטיות</span><span class="en">Non-Judgmental</span></h4>
+<p style="color:var(--text-dim);font-size:.88rem"><span class="he">כל אדם בא עם הסיפור שלו. אנחנו לא שופטים, לא לוחצים — רק מלווים בדרך.</span><span class="en">Everyone comes with their own story. We don't judge, don't pressure — just accompany.</span></p>
 </div>
-<div style="margin-top:48px"><a href="index.html#contact" class="btn-gold">אני רוצה לקבוע חברותא ←</a></div>
+<div class="glass-card reveal reveal-d2" style="text-align:center">
+<div style="font-size:2rem;margin-bottom:12px">🎁</div>
+<h4 style="color:#fff;font-size:1.05rem;margin-bottom:8px;font-family:'Frank Ruhl Libre',serif"><span class="he">חינם לגמרי</span><span class="en">Completely Free</span></h4>
+<p style="color:var(--text-dim);font-size:.88rem"><span class="he">אין תשלום, אין מנוי, אין התחייבות. הלימוד הוא שליחות, לא עסק.</span><span class="en">No payment, no subscription, no obligation. Learning is a mission, not a business.</span></p>
+</div>
+<div class="glass-card reveal reveal-d3" style="text-align:center">
+<div style="font-size:2rem;margin-bottom:12px">🕊️</div>
+<h4 style="color:#fff;font-size:1.05rem;margin-bottom:8px;font-family:'Frank Ruhl Libre',serif"><span class="he">בקצב שלך</span><span class="en">At Your Pace</span></h4>
+<p style="color:var(--text-dim);font-size:.88rem"><span class="he">שעה בשבוע, בזמן שנוח לך. אתה קובע מה לומדים, מתי, ואיך.</span><span class="en">One hour a week, when it suits you. You decide what to learn, when, and how.</span></p>
+</div>
+</div>
 </div>
 </section>
+
+<section>
+<div class="container">
+<div class="grid-2 reveal" style="gap:40px;align-items:center">
+<div class="glass-card" style="text-align:center;padding:36px;border-color:rgba(201,168,76,.25)">
+<div style="font-size:2.5rem;margin-bottom:12px">🤖</div>
+<h3 style="color:var(--gold);font-family:'Frank Ruhl Libre',serif;font-size:1.3rem;margin-bottom:10px"><span class="he">פלטפורמת משה גינזי</span><span class="en">Moshe Ginzy Platform</span></h3>
+<p style="color:var(--text-dim);font-size:.92rem;margin-bottom:20px"><span class="he">פלטפורמה חכמה שעונה על כל שאלה ביהדות — 24/7, בחינם. עם מאגר של 16,500+ שאלות ותשובות, משה גינזי זמין באפליקציה (iOS ו-Android) ובאתר.</span><span class="en">A smart platform answering any Jewish question — 24/7, for free. With a database of 16,500+ Q&As, Moshe Ginzy is available as an app (iOS & Android) and online.</span></p>
+<a href="https://mosheginzy.com" class="btn-gold" target="_blank"><span class="he">לאתר משה גינזי ←</span><span class="en">Visit Moshe Ginzy →</span></a>
+</div>
+<div>
+<span class="section-badge"><span class="he">טכנולוגיה ומסורת</span><span class="en">Technology & Tradition</span></span>
+<h2 class="section-title"><span class="he">חדשנות בשירות המסורת</span><span class="en">Innovation Serving Tradition</span></h2>
+<p style="color:var(--text-dim);margin-bottom:16px"><span class="he">משה גינזי הוא הצעד הבא בשליחות של נתיבות — להנגיש את חוכמת היהדות לכל יהודי, בכל מקום ובכל זמן. הפלטפורמה משלבת טכנולוגיה מתקדמת עם מאגר ידע תורני עשיר.</span><span class="en">Moshe Ginzy is the next step in Netivot's mission — making Jewish wisdom accessible to every Jew, anywhere, anytime. The platform combines advanced technology with a rich Torah knowledge base.</span></p>
+<p style="color:var(--text-dim)"><span class="he">שאלתם שאלה שדורשת מענה אנושי? משה גינזי יפנה אתכם לקו ההלכה של הרב שלנו.</span><span class="en">Asked a question that needs a human response? Moshe Ginzy will direct you to our rabbi's halacha hotline.</span></p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-alt">
+<div class="container text-center">
+<span class="section-badge reveal"><span class="he">הם כבר שם</span><span class="en">They're Already There</span></span>
+<h2 class="section-title reveal"><span class="he">מה אומרים המשתתפים</span><span class="en">What Participants Say</span></h2>
+<div class="grid-3" style="margin-top:36px">
+<div class="testimonial-card reveal reveal-d1"><p><span class="he">החברותא המדהימה שלי כזאת חכמה עם כזה ניסיון חיים שפשוט כל שאלה שיש לי אני מתייעצת איתה. ממש קיבלתי מתנה לחיים.</span><span class="en">My amazing chavruta is so wise and experienced that I consult her on every question. I truly received a gift for life.</span></p><div class="t-author"><span class="he">ורד</span><span class="en">Vered</span></div><div class="t-role"><span class="he">ירושלים</span><span class="en">Jerusalem</span></div></div>
+<div class="testimonial-card reveal reveal-d2"><p><span class="he">ניפצו לי ממש את כל הסטיגמות על הדת והדתיים. פתאום גיליתי אנשים נחמדים ולא מפחידים בכלל — ההפך הגמור ממה שחשבתי.</span><span class="en">They completely shattered all my stereotypes about religion. I suddenly discovered warm, welcoming people — the exact opposite of what I expected.</span></p><div class="t-author"><span class="he">דניאלה</span><span class="en">Daniella</span></div><div class="t-role"><span class="he">מורה לחינוך מיוחד</span><span class="en">Special Education Teacher</span></div></div>
+<div class="testimonial-card reveal reveal-d3"><p><span class="he">ראייה מזווית אחרת, שונה. לא זו שהורגלנו אליה. ראייה תכליתית — בגדול מודה לכם שהכרתם לי אותו.</span><span class="en">A different perspective, one I wasn't used to. A purposeful viewpoint — I'm deeply grateful you introduced me to him.</span></p><div class="t-author"><span class="he">שניר</span><span class="en">Snir</span></div><div class="t-role"><span class="he">חיפה</span><span class="en">Haifa</span></div></div>
+</div>
+<p style="margin-top:36px" class="reveal"><a href="contact.html" class="btn-gold"><span class="he">גם אני רוצה חברותא ←</span><span class="en">I Want a Chavruta Too →</span></a></p>
+</div>
+</section>
+
+<section>
+<div class="container text-center">
+<span class="section-badge reveal"><span class="he">מידע משפטי</span><span class="en">Legal Information</span></span>
+<h2 class="section-title reveal"><span class="he">ארגון מוכר ורשום</span><span class="en">Registered Nonprofit</span></h2>
+<div class="grid-3" style="margin-top:36px">
+<div class="glass-card reveal reveal-d1" style="text-align:center"><div style="color:var(--gold);font-weight:700;margin-bottom:8px">501(c)(3)</div><p style="color:var(--text-dim);font-size:.88rem"><span class="he">עמותה פטורה ממס</span><span class="en">Tax-Exempt Nonprofit</span></p></div>
+<div class="glass-card reveal reveal-d2" style="text-align:center"><div style="color:var(--gold);font-weight:700;margin-bottom:8px">EIN 13-4184366</div><p style="color:var(--text-dim);font-size:.88rem"><span class="he">מספר עמותה פדרלי</span><span class="en">Federal Tax ID</span></p></div>
+<div class="glass-card reveal reveal-d3" style="text-align:center"><div style="color:var(--gold);font-weight:700;margin-bottom:8px">New Jersey</div><p style="color:var(--text-dim);font-size:.88rem"><span class="he">רשומה במדינת ניו ג'רזי</span><span class="en">Registered in NJ</span></p></div>
+</div>
+</div>
+</section>
+
 <footer class="footer">
 <div class="footer-brand">NETIVOT</div>
-<div class="footer-tagline">אוכל לנשמה • לימוד חברותא • חיבור לשורשים</div>
-<div class="footer-links">
-<a href="index.html">בית</a><a href="about.html">אודות</a><a href="programs.html">תוכניות</a><a href="impact.html">השפעה</a><a href="contact.html">צור קשר</a><a href="https://mosheginzy.com">משה גינזי</a>
+<div class="footer-tagline">
+<span class="he">אוכל לנשמה · לימוד חברותא · חיבור לשורשים</span>
+<span class="en">Food for the Soul · Chavruta Learning · Connecting to Roots</span>
 </div>
-<div class="footer-copy">© 2026 Netivot Organization · Congregation Netivot of New York Inc. · 501(c)(3)</div>
+<div class="footer-links">
+<a href="index.html"><span class="he">בית</span><span class="en">Home</span></a>
+<a href="about.html"><span class="he">אודות</span><span class="en">About</span></a>
+<a href="programs.html"><span class="he">תוכניות</span><span class="en">Programs</span></a>
+<a href="faq.html"><span class="he">שאלות נפוצות</span><span class="en">FAQ</span></a>
+<a href="topics.html"><span class="he">נושאי לימוד</span><span class="en">Topics</span></a>
+<a href="contact.html"><span class="he">צור קשר</span><span class="en">Contact</span></a>
+<a href="privacy.html"><span class="he">מדיניות פרטיות</span><span class="en">Privacy Policy</span></a>
+</div>
+<a href="https://mosheginzy.com" class="footer-app">🎬 <span class="he">משה גינזי — אפליקציה ללימוד יהדות</span><span class="en">Moshe Ginzy — Jewish Learning App</span></a>
+<div class="footer-copy">© 2026 Netivot Organization · Congregation Netivot of New York Inc. · 501(c)(3) · EIN 13-4184366</div>
 </footer>
+
+<script>
+// Theme toggle
+function toggleTheme(){
+document.documentElement.classList.toggle('light');
+const isLight=document.documentElement.classList.contains('light');
+localStorage.setItem('theme',isLight?'light':'dark');
+document.getElementById('themeBtn').textContent=isLight?'🌙':'☀️';
+}
+// Lang toggle
+function toggleLang(){
+const cur=document.documentElement.getAttribute('lang');
+const next=cur==='he'?'en':'he';
+document.documentElement.setAttribute('lang',next);
+document.documentElement.setAttribute('dir',next==='he'?'rtl':'ltr');
+localStorage.setItem('lang',next);
+document.getElementById('langBtn').textContent=next==='he'?'EN':'עב';
+}
+// Restore saved prefs
+(function(){
+const t=localStorage.getItem('theme');
+if(t==='light'){document.documentElement.classList.add('light');document.getElementById('themeBtn').textContent='🌙'}
+const l=localStorage.getItem('lang');
+if(l==='en'){document.documentElement.setAttribute('lang','en');document.documentElement.setAttribute('dir','ltr');document.getElementById('langBtn').textContent='עב'}
+})();
+// Scroll progress
+window.addEventListener('scroll',()=>{
+const h=document.documentElement;
+const p=document.getElementById('scrollProgress');
+if(p)p.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';
+});
+// Reveal on scroll
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Animated counters
+function animateCounters(){
+document.querySelectorAll('[data-target]').forEach(el=>{
+const t=parseInt(el.dataset.target),s=el.dataset.suffix||'',dur=2000,st=performance.now();
+function u(n){const p=Math.min((n-st)/dur,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*t).toLocaleString()+s;if(p<1)requestAnimationFrame(u)}
+requestAnimationFrame(u);
+});}
+const sObs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){animateCounters();sObs.unobserve(el.target)}})},{threshold:.3});
+const sr=document.querySelector('.stats-row');if(sr)sObs.observe(sr);
+</script>
+<!-- Moshe Ginzy Chatbot -->
 <script>window.difyChatbotConfig={token:'app-VFD9vOFBd83JQC3BvLwuX5Q4'}</script>
 <script src="https://udify.app/embed.min.js" id="dify-chatbot" defer></script>
 <style>#dify-chatbot-bubble-button{bottom:24px!important;right:24px!important}</style>
+
 </body>
 </html>
