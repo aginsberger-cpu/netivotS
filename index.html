@@ -39,6 +39,19 @@ html.light .hero-card{background:rgba(255,255,255,.75)!important;border-color:rg
 html.light .glass-card,html.light .stat-card,html.light .topic-card,html.light .testimonial-card,
 html.light .faq-item,html.light .contact-box{background:rgba(255,255,255,.7)!important}
 html.light .footer{background:#e0ddd6}
+html.light .faq-q{color:#1a1a2e!important}
+html.light .faq-a p{color:#5a5a6e!important}
+html.light .page-hero p{color:#5a5a6e!important}
+html.light .page-badge{color:#8a6d2b!important}
+html.light .section-badge{color:#8a6d2b!important}
+html.light p{color:#5a5a6e!important}
+html.light .topic-card p{color:#5a5a6e!important}
+html.light .t-role{color:#7a7a8e!important}
+html.light .nav-center a{color:#5a5a6e!important}
+html.light .nav-center a.active,html.light .nav-center a:hover{color:#8a6d2b!important}
+html.light .highlight-box{color:#8a6d2b!important}
+html.light .benefit-list li{color:#5a5a6e!important}
+
 html.light .btn-gold{color:#fff!important}
 html.light .hero-dot.active{background:#8a6d2b!important}
 html.light .orb{opacity:.02!important}
@@ -378,30 +391,31 @@ div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important
 </div>
 <p style="font-size:.85rem;color:var(--gold)" class="reveal"><span class="he">📌 משה גינזי עונה על שאלות ביהדות בלבד</span><span class="en">📌 Moshe Ginzy answers Jewish questions only</span></p>
 </div>
-<div style="max-width:700px;margin:0 auto" class="reveal">
-<div id="moshe-chat" style="background:linear-gradient(135deg,#1a1209,#0d1433);border:2px solid rgba(201,168,76,.3);border-radius:20px;overflow:hidden">
+<div style="max-width:800px;margin:0 auto" class="reveal">
+<div id="moshe-chat" style="background:linear-gradient(135deg,#1a1209,#0d1433);border:2px solid rgba(201,168,76,.3);border-radius:24px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.3)">
 <!-- Header -->
-<div style="background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));padding:16px 24px;display:flex;align-items:center;gap:14px;justify-content:flex-end;border-bottom:1px solid rgba(201,168,76,.15)">
-<div><div style="font-weight:700;color:#c9a84c;font-size:1.1rem">משה גינזי</div><div style="font-size:.78rem;color:#a09888">מחשבת ישראל וכלים לחיים · ללא עלות</div></div>
-<img src="https://aginsberger-cpu.github.io/mosheginzy/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%9E%D7%A6%D7%95%D7%99%D7%A0%D7%AA%20%D7%9E%D7%A9%D7%94%20%D7%92%D7%99%D7%A0%D7%96%D7%99.png" style="width:48px;height:48px;border-radius:50%;border:2px solid rgba(201,168,76,.3);object-fit:cover">
+<div style="background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(201,168,76,.06));padding:24px 28px;display:flex;align-items:center;gap:16px;justify-content:flex-end;border-bottom:1px solid rgba(201,168,76,.15)">
+<div><div style="font-family:'Frank Ruhl Libre',serif;font-weight:700;color:#c9a84c;font-size:1.4rem">משה גינזי</div><div style="font-size:.85rem;color:#a09888">מחשבת ישראל וכלים לחיים · בגובה העיניים · ללא עלות</div></div>
+<img src="https://aginsberger-cpu.github.io/mosheginzy/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%9E%D7%A6%D7%95%D7%99%D7%A0%D7%AA%20%D7%9E%D7%A9%D7%94%20%D7%92%D7%99%D7%A0%D7%96%D7%99.png" style="width:60px;height:60px;border-radius:50%;border:2px solid rgba(201,168,76,.4);object-fit:cover">
 </div>
 <!-- Name panel -->
-<div id="mg-name-panel" style="padding:28px 24px;text-align:center">
-<p style="font-size:1.1rem;color:#eae6de;margin-bottom:6px">👋 שלום!</p>
-<p style="color:#a09888;margin-bottom:16px">לפני שמתחילים — מה שמך?</p>
-<input id="mg-name" type="text" placeholder="כתוב שמך כאן..." style="width:100%;max-width:280px;padding:12px 16px;border-radius:12px;border:1px solid rgba(201,168,76,.2);background:rgba(255,255,255,.05);color:#eae6de;font-family:'Heebo';font-size:.95rem;text-align:center;outline:none">
+<div id="mg-name-panel" style="padding:40px 28px;text-align:center">
+<p style="font-size:1.4rem;color:#eae6de;margin-bottom:8px;font-family:'Frank Ruhl Libre',serif">👋 שלום!</p>
+<p style="color:#a09888;margin-bottom:20px;font-size:1.05rem">לפני שמתחילים — מה שמך?</p>
+<input id="mg-name" type="text" placeholder="כתוב שמך כאן..." style="width:100%;max-width:320px;padding:14px 18px;border-radius:14px;border:1px solid rgba(201,168,76,.25);background:rgba(255,255,255,.05);color:#eae6de;font-family:'Heebo';font-size:1rem;text-align:center;outline:none">
 <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
 <button onclick="mgGender='נקבה';this.style.borderColor='#c9a84c';this.nextElementSibling.style.borderColor=''" style="padding:8px 20px;border-radius:20px;border:1px solid rgba(201,168,76,.2);background:none;color:#eae6de;cursor:pointer;font-family:'Heebo'">אני אישה</button>
 <button onclick="mgGender='זכר';this.style.borderColor='#c9a84c';this.previousElementSibling.style.borderColor=''" style="padding:8px 20px;border-radius:20px;border:1px solid rgba(201,168,76,.2);background:none;color:#eae6de;cursor:pointer;font-family:'Heebo'">אני גבר</button>
 </div>
-<button onclick="startMG()" style="margin-top:14px;background:linear-gradient(135deg,#c9a84c,#dfc06a);color:#1a1209;border:none;padding:12px 32px;border-radius:30px;font-weight:700;font-family:'Heebo';cursor:pointer;font-size:.95rem">← בואו נתחיל</button>
+<button onclick="startMG()" style="margin-top:18px;background:linear-gradient(135deg,#c9a84c,#dfc06a);color:#1a1209;border:none;padding:14px 40px;border-radius:30px;font-weight:700;font-family:'Heebo';cursor:pointer;font-size:1rem">← בואו נתחיל</button>
+<p style="margin-top:24px;color:#a09888;font-size:.9rem;line-height:1.8">אין שאלה קטנה מדי,<br>ואין שאלה גדולה מדי.</p>
 </div>
 <!-- Chat area -->
 <div id="mg-chat-area" style="display:none">
-<div id="mg-msgs" style="height:350px;overflow-y:auto;padding:16px 20px"></div>
-<div style="padding:12px 16px;border-top:1px solid rgba(201,168,76,.1);display:flex;gap:8px;align-items:center">
-<button onclick="sendMG()" style="background:linear-gradient(135deg,#c9a84c,#dfc06a);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" fill="#1a1209" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
-<input id="mg-input" type="text" placeholder="כתוב שאלה..." onkeypress="if(event.key==='Enter')sendMG()" style="flex:1;padding:10px 14px;border-radius:12px;border:1px solid rgba(201,168,76,.15);background:rgba(255,255,255,.05);color:#eae6de;font-family:'Heebo';font-size:.92rem;outline:none;direction:rtl">
+<div id="mg-msgs" style="height:420px;overflow-y:auto;padding:20px 24px"></div>
+<div style="padding:14px 20px;border-top:1px solid rgba(201,168,76,.1);display:flex;gap:10px;align-items:center">
+<button onclick="sendMG()" style="background:linear-gradient(135deg,#c9a84c,#dfc06a);border:none;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="18" height="18" fill="#1a1209" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+<input id="mg-input" type="text" placeholder="כתוב שאלה..." onkeypress="if(event.key==='Enter')sendMG()" style="flex:1;padding:12px 16px;border-radius:14px;border:1px solid rgba(201,168,76,.2);background:rgba(255,255,255,.06);color:#eae6de;font-family:'Heebo';font-size:1rem;outline:none;direction:rtl">
 </div>
 </div>
 </div>
