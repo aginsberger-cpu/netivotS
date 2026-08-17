@@ -229,13 +229,16 @@ html.light .nav-center{background:rgba(244,241,236,.97)}
 .hero-divider{width:70px;height:2px;margin:0 auto 16px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:fadeInUp .8s ease-out .4s both}
 .hero-tags{font-size:.9rem;color:var(--text-dim);letter-spacing:4px;margin-bottom:28px;animation:fadeInUp .8s ease-out .5s both}
 .hero-cards{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s ease-out .6s both;margin-top:8px}
-.hero-card{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;border-radius:20px;padding:32px 28px 28px;width:280px;transition:transform .4s,border-color .4s,box-shadow .4s;position:relative;overflow:hidden}
+.hero-card{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;border-radius:20px;padding:32px 24px 24px;width:300px;min-height:280px;justify-content:space-between;transition:transform .4s,border-color .4s,box-shadow .4s;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(10,16,40,.7));border:1.5px solid rgba(201,168,76,.35);box-shadow:0 8px 32px rgba(201,168,76,.1),inset 0 1px 0 rgba(201,168,76,.15)}
 .hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,#dfc06a,#c9a84c,transparent)}
 .hero-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.2),transparent)}
 .hero-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.6);box-shadow:0 20px 60px rgba(201,168,76,.15),inset 0 1px 0 rgba(201,168,76,.25)}
-.hero-card-icon{font-size:2.4rem;margin-bottom:14px}
-.hero-card-title{font-family:'Frank Ruhl Libre',serif;font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.4}
-.hero-card-desc{font-size:.85rem;color:var(--text-dim);line-height:1.7}
+.hero-card-icon{font-size:2.4rem;margin-bottom:10px}
+.hero-card-img{width:56px;height:56px;border-radius:50%;border:2px solid rgba(201,168,76,.4);object-fit:cover;margin-bottom:10px}
+.hero-card-title{font-family:'Frank Ruhl Libre',serif;font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.4}
+.hero-card-sub{font-size:.88rem;color:var(--gold);margin-bottom:8px;font-style:italic}
+.hero-card-desc{font-size:.83rem;color:var(--text-dim);line-height:1.7;margin-bottom:auto}
+.hero-card-btn{margin-top:16px;background:linear-gradient(135deg,#c9a84c,#dfc06a);color:#1a1209;padding:10px 22px;border-radius:30px;font-weight:700;font-size:.85rem;white-space:nowrap}
 @media(max-width:768px){.hero-cards{flex-direction:column;align-items:center}.hero-card{width:88%}}
 .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
 .intro-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-glass);transition:transform .5s}
@@ -300,18 +303,19 @@ gtag('config','G-L57EEPMT9Q');
 <div class="hero-tags"><span class="he">שבת · תפילה · חגים · אמונה · מסורת</span><span class="en">Shabbat · Prayer · Holidays · Faith · Heritage</span></div>
 <p class="hero-quote" style="font-size:1rem;color:var(--text-light);margin-bottom:28px;max-width:600px;margin-inline:auto;line-height:1.9;animation:fadeInUp .8s ease-out .55s both"><span class="he">מפגש אישי 1 על 1 ושיח פתוח על החיים, אמונה ומסורת — בקצב שלך, ללא עלות וללא שיפוטיות.</span><span class="en">Personal 1-on-1 meetings and open conversation about life, faith, and tradition — at your pace, free of charge, and non-judgmental.</span></p>
 <div class="hero-cards">
-<a href="#chavruta" class="hero-card" style="background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(10,16,40,.7));border:1.5px solid rgba(201,168,76,.35);box-shadow:0 8px 32px rgba(201,168,76,.1),inset 0 1px 0 rgba(201,168,76,.15)">
+<a href="#chavruta" class="hero-card">
 <div class="hero-card-icon">📞</div>
 <div class="hero-card-title"><span class="he">חונכות אישית ביהדות</span><span class="en">Personal Jewish Mentoring</span></div>
-<div style="font-size:.88rem;color:var(--gold);margin-bottom:10px;font-style:italic"><span class="he">לימוד אישי 1 על 1</span><span class="en">One-on-One Learning</span></div>
+<div class="hero-card-sub"><span class="he">לימוד אישי 1 על 1</span><span class="en">One-on-One Learning</span></div>
 <div class="hero-card-desc"><span class="he">בטלפון, בזום, או פנים אל פנים בבית כנסת ליד הבית — שעה בשבוע, 100% חינם וללא התחייבות.</span><span class="en">By phone, Zoom, or face-to-face at your local synagogue — one hour a week, 100% free, no commitment.</span></div>
-<div style="margin-top:16px;background:linear-gradient(135deg,#c9a84c,#dfc06a);color:#1a1209;padding:10px 24px;border-radius:30px;font-weight:700;font-size:.88rem"><span class="he">👈 הרשמו עכשיו ללא עלות</span><span class="en">👉 Register Now — Free</span></div>
+<div class="hero-card-btn"><span class="he">👈 הרשמו עכשיו ללא עלות</span><span class="en">👉 Register Now — Free</span></div>
 </a>
-<a href="#moshe" class="hero-card" style="background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(10,16,40,.7));border:1.5px solid rgba(201,168,76,.35);box-shadow:0 8px 32px rgba(201,168,76,.1),inset 0 1px 0 rgba(201,168,76,.15)">
-<img src="https://aginsberger-cpu.github.io/mosheginzy/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%9E%D7%A6%D7%95%D7%99%D7%A0%D7%AA%20%D7%9E%D7%A9%D7%94%20%D7%92%D7%99%D7%A0%D7%96%D7%99.png" style="width:56px;height:56px;border-radius:50%;border:2px solid rgba(201,168,76,.4);object-fit:cover;margin-bottom:10px">
+<a href="#moshe" class="hero-card">
+<img src="https://aginsberger-cpu.github.io/mosheginzy/%D7%AA%D7%9E%D7%95%D7%A0%D7%94%20%D7%9E%D7%A6%D7%95%D7%99%D7%A0%D7%AA%20%D7%9E%D7%A9%D7%94%20%D7%92%D7%99%D7%A0%D7%96%D7%99.png" class="hero-card-img" alt="משה גינזי">
 <div class="hero-card-title"><span class="he">שאלו את משה גינזי</span><span class="en">Ask Moshe Ginzy</span></div>
+<div class="hero-card-sub">&nbsp;</div>
 <div class="hero-card-desc"><span class="he">מענה ישיר ופתוח לכל שאלה על החיים והיהדות — זמין עבורכם 24/7.</span><span class="en">Direct and open answers to any question about life and Judaism — available 24/7.</span></div>
-<div style="margin-top:16px;background:linear-gradient(135deg,#c9a84c,#dfc06a);color:#1a1209;padding:10px 24px;border-radius:30px;font-weight:700;font-size:.88rem"><span class="he">👈 לחצו עכשיו לכל שאלה ביהדות</span><span class="en">👉 Click Now for Any Jewish Question</span></div>
+<div class="hero-card-btn"><span class="he">👈 לחצו עכשיו לכל שאלה ביהדות</span><span class="en">👉 Click Now for Any Jewish Question</span></div>
 </a>
 </div>
 </div>
