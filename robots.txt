@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://netivotny.org/sitemap.xml
