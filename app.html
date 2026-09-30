@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>משה גינזי – אפליקציה לשאלות ביהדות | נתיבות</title>
+<meta name="description" content="משה גינזי – האפליקציה החינמית של ארגון נתיבות: תשובות לשאלות ביהדות 24/7, שאלת היום, סרטוני לימוד והרשמה לחונכות אישית. להורדה ב-App Store וב-Google Play.">
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#060a1e;--bg2:#0a1028;--bg3:#0d1433;
+--bg-glass:rgba(10,16,40,0.55);--bg-glass2:rgba(10,16,40,0.35);
+--border-glass:rgba(201,168,76,0.12);--border-glass2:rgba(255,255,255,0.06);
+--gold:#c9a84c;--gold-light:#dfc06a;--gold-dim:#8a7535;--gold-glow:rgba(201,168,76,0.15);
+--text:#eae6de;--text-dim:#a09888;--text-light:rgba(255,255,255,0.5);
+--radius:16px;--radius-sm:12px;
+}
+/* LIGHT MODE */
+html.light{
+--bg:#f4f1ec;--bg2:#eae7e0;--bg3:#e0ddd6;
+--bg-glass:rgba(255,255,255,0.65);--bg-glass2:rgba(255,255,255,0.4);
+--border-glass:rgba(201,168,76,0.2);--border-glass2:rgba(0,0,0,0.06);
+--text:#1a1a2e;--text-dim:#5a5a6e;--text-light:rgba(0,0,0,0.45);
+}
+html.light .nav{background:rgba(244,241,236,.94)!important}
+html.light .hero-overlay{background:linear-gradient(180deg,rgba(244,241,236,.7) 0%,rgba(244,241,236,.35) 40%,rgba(244,241,236,.35) 60%,rgba(244,241,236,.75) 100%)!important}
+html.light .section-title,html.light .topic-card h4,html.light .faq-q,html.light .page-hero h1,
+html.light h2,html.light h3,html.light h4,
+html.light .hero-card-title,html.light .step-card h4,
+html.light .testimonial-card p,html.light .glass-card h4,
+html.light .contact-box h3,html.light .contact-box h2{color:#1a1a2e!important}
+html.light .stat-num{color:#8a6d2b!important}
+html.light .glass-card,html.light .stat-card,html.light .topic-card,html.light .testimonial-card,
+html.light .faq-item,html.light .contact-box{background:rgba(255,255,255,.7)!important}
+html.light .btn-gold{color:#fff!important}
+html.light .footer{background:#e0ddd6}
+html.light .faq-q{color:#1a1a2e!important}
+html.light .faq-a p{color:#5a5a6e!important}
+html.light .page-hero p{color:#5a5a6e!important}
+html.light .page-badge{color:#8a6d2b!important}
+html.light .section-badge{color:#8a6d2b!important}
+html.light p{color:#5a5a6e!important}
+html.light .topic-card p{color:#5a5a6e!important}
+html.light .t-role{color:#7a7a8e!important}
+html.light .nav-center a{color:#5a5a6e!important}
+html.light .nav-center a.active,html.light .nav-center a:hover{color:#8a6d2b!important}
+html.light .highlight-box{color:#8a6d2b!important}
+html.light .benefit-list li{color:#5a5a6e!important}
+
+
+/* LANGUAGE */
+html[lang="he"] .en{display:none!important}
+html[lang="en"] .he{display:none!important}
+html[lang="en"]{direction:ltr}
+html[lang="en"] .nav{flex-direction:row-reverse}
+html[lang="en"] .nav-links{flex-direction:row-reverse}
+html[lang="en"] .nav-right{flex-direction:row-reverse}
+
+html{scroll-behavior:smooth}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden;transition:background .4s,color .4s}
+
+/* NAV */
+.nav{position:fixed;top:0;right:0;left:0;z-index:100;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,10,30,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border-glass);transition:background .4s}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-logo-img{height:34px;width:auto}
+.nav-logo-text{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:1.05rem;color:var(--gold);text-decoration:none;letter-spacing:1px}
+.nav-center{display:flex;gap:20px;align-items:center}
+.nav-center a{color:var(--text-dim);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .3s;padding:6px 2px;border-bottom:2px solid transparent}
+.nav-center a:hover,.nav-center a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-left{display:flex;align-items:center;gap:10px}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#060a1e!important;padding:9px 22px;border-radius:40px;font-weight:700;font-size:.85rem;text-decoration:none;transition:box-shadow .3s,transform .3s;border:none;cursor:pointer}
+.nav-cta:hover{box-shadow:0 4px 24px var(--gold-glow);transform:translateY(-1px)}
+.toggle-btn{background:var(--bg-glass);border:1px solid var(--border-glass);border-radius:20px;padding:5px 10px;cursor:pointer;color:var(--text-dim);font-size:.75rem;font-family:'Heebo';transition:all .3s}
+.toggle-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{width:22px;height:2px;background:var(--gold);border-radius:2px;transition:all .3s}
+
+/* WHATSAPP FAB */
+.wa-fab{position:fixed;bottom:24px;left:24px;z-index:200;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);text-decoration:none;transition:transform .3s;animation:fabPulse 3s ease-in-out infinite}
+.wa-fab:hover{transform:scale(1.1);animation:none}
+.wa-fab svg{width:26px;height:26px;fill:#fff}
+@keyframes fabPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.35)}50%{box-shadow:0 4px 32px rgba(37,211,102,.55)}}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:200;width:0%;transition:width .1s}
+
+/* BG ORBS */
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.06;animation:orbFloat 20s ease-in-out infinite alternate}
+.orb-1{width:500px;height:500px;background:radial-gradient(circle,#1a3a8a,transparent);top:-10%;right:-10%;animation-duration:25s}
+.orb-2{width:350px;height:350px;background:radial-gradient(circle,#c9a84c,transparent);bottom:20%;left:-5%;animation-duration:18s;animation-delay:-5s}
+@keyframes orbFloat{0%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.1)}100%{transform:translate(-20px,20px) scale(.95)}}
+html.light .orb{opacity:.03}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.25s}
+.reveal-d4{transition-delay:.3s}.reveal-d5{transition-delay:.35s}.reveal-d6{transition-delay:.4s}
+
+/* SECTIONS */
+section{padding:90px 24px;position:relative;z-index:1}
+.container{max-width:1100px;margin:0 auto}
+.section-badge{display:inline-block;color:var(--gold);font-size:.78rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+.section-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;color:#fff;margin-bottom:14px}
+.section-sub{font-size:1rem;color:var(--text-dim);max-width:580px;margin-bottom:44px;line-height:1.8}
+.text-center{text-align:center}
+.text-center .section-sub{margin-inline:auto}
+.section-alt{background:var(--bg2)}
+.section-alt2{background:var(--bg3)}
+
+/* GLASS CARD */
+.glass-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:32px 24px;transition:transform .4s,border-color .4s,box-shadow .4s}
+.glass-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 12px 40px var(--gold-glow)}
+
+/* BUTTONS */
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#060a1e;padding:15px 36px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;transition:transform .3s,box-shadow .3s;border:none;cursor:pointer;display:inline-block;position:relative;overflow:hidden}
+.btn-gold::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}
+.btn-gold:hover::after{left:120%}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 32px var(--gold-glow)}
+.btn-outline{border:1px solid var(--border-glass);background:var(--bg-glass);backdrop-filter:blur(8px);color:var(--gold);padding:15px 32px;border-radius:50px;text-decoration:none;font-weight:600;font-size:.95rem;transition:border-color .3s,box-shadow .3s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);box-shadow:0 0 24px var(--gold-glow)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border-glass);padding:48px 24px 28px;text-align:center;position:relative;z-index:1}
+.footer-brand{font-family:'Frank Ruhl Libre',serif;font-size:1.3rem;font-weight:900;color:var(--gold);letter-spacing:3px;margin-bottom:6px}
+.footer-tagline{font-size:.82rem;color:var(--text-dim);margin-bottom:20px}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.footer-links a{color:var(--text-dim);text-decoration:none;font-size:.82rem;transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-app{display:inline-block;margin-top:6px;border:1px solid var(--border-glass);padding:9px 22px;border-radius:40px;color:var(--gold);text-decoration:none;font-size:.85rem;transition:border-color .3s}
+.footer-app:hover{border-color:var(--gold)}
+.footer-copy{font-size:.72rem;color:var(--text-dim);opacity:.5;margin-top:18px}
+
+/* PAGE HERO (inner pages) */
+.page-hero{padding:130px 24px 70px;text-align:center;position:relative}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.05),transparent 60%)}
+.page-hero h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;color:#fff;margin-bottom:14px}
+.page-hero p{font-size:1.05rem;color:var(--text-dim);max-width:580px;margin:0 auto;line-height:1.8}
+.page-badge{display:inline-block;color:var(--gold);font-size:.78rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+/* STAT CARD */
+.stat-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:28px 16px;text-align:center;transition:transform .4s,border-color .4s}
+.stat-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.stat-num{font-family:'Frank Ruhl Libre',serif;font-size:2.2rem;font-weight:900;color:var(--gold);margin-bottom:4px}
+.stat-label{font-size:.82rem;color:var(--text-dim)}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border:1px solid var(--border-glass);border-radius:14px;margin-bottom:10px;overflow:hidden;background:var(--bg-glass);backdrop-filter:blur(14px);transition:border-color .3s}
+.faq-item:hover{border-color:rgba(201,168,76,.2)}
+.faq-q{padding:18px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:#fff;font-size:.95rem;transition:color .3s}
+.faq-q:hover{color:var(--gold)}
+.faq-q::after{content:'▾';color:var(--gold);font-size:1.1rem;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1),padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding:0 24px 18px}
+.faq-a p{font-size:.9rem;color:var(--text-dim);line-height:1.8}
+
+/* TESTIMONIAL */
+.testimonial-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:28px 24px;position:relative;transition:transform .4s,border-color .4s}
+.testimonial-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.testimonial-card::before{content:'"';font-family:'Frank Ruhl Libre',serif;font-size:3.5rem;color:var(--gold);opacity:.2;position:absolute;top:10px;right:18px;line-height:1}
+.testimonial-card p{font-size:.92rem;color:var(--text);margin-bottom:16px;position:relative;z-index:1;line-height:1.8}
+.t-author{font-weight:700;color:var(--gold);font-size:.88rem}
+.t-role{font-size:.78rem;color:var(--text-dim)}
+
+/* TOPIC CARD */
+.topic-card{background:var(--bg-glass);backdrop-filter:blur(14px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:32px 24px;transition:transform .4s,border-color .4s,box-shadow .4s}
+.topic-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 12px 40px var(--gold-glow)}
+.topic-icon{font-size:2rem;margin-bottom:12px;display:block}
+.topic-card h4{font-family:'Frank Ruhl Libre',serif;font-size:1.1rem;color:#fff;margin-bottom:8px}
+.topic-card p{font-size:.88rem;color:var(--text-dim);line-height:1.7}
+
+/* CONTACT */
+.contact-box{background:var(--bg-glass);backdrop-filter:blur(20px);border:1px solid var(--border-glass);border-radius:var(--radius);padding:40px 36px;max-width:500px;margin:0 auto}
+.contact-box input,.contact-box textarea{width:100%;padding:14px 16px;border-radius:var(--radius-sm);border:1px solid var(--border-glass);background:rgba(6,10,30,.4);color:var(--text);font-family:'Heebo';font-size:.92rem;margin-bottom:12px;outline:none;transition:border-color .3s}
+html.light .contact-box input,html.light .contact-box textarea{background:rgba(255,255,255,.5)}
+.contact-box input:focus,.contact-box textarea:focus{border-color:var(--gold)}
+.contact-box input::placeholder,.contact-box textarea::placeholder{color:var(--text-dim)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav{padding:10px 16px}
+.nav-center{display:none;position:absolute;top:58px;right:0;left:0;background:rgba(6,10,30,.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:12px;border-bottom:1px solid var(--border-glass)}
+html.light .nav-center{background:rgba(244,241,236,.97)}
+.nav-center.open{display:flex}
+.hamburger{display:flex}
+.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+.grid-4{grid-template-columns:repeat(2,1fr)}
+.hero-title{font-size:clamp(2.4rem,9vw,3.5rem)!important}
+.contact-box{padding:28px 18px}
+.orb{opacity:.03}
+.toggle-btn{padding:4px 8px;font-size:.7rem}
+}
+
+
+/* ===== APP PAGE ===== */
+.app-hero{padding:130px 20px 60px}
+.app-hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.app-hero h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.2;color:#fff;margin:14px 0 18px}
+.app-hero h1 .gold{color:var(--gold)}
+.app-hero .lead{color:var(--text-dim);font-size:1.12rem;line-height:1.7;margin-bottom:28px;max-width:560px}
+.store-row{display:flex;gap:14px;flex-wrap:wrap}
+.store-btn{display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#000;border:1px solid rgba(201,168,76,.45);color:#fff;text-decoration:none;min-width:200px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.store-btn:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 8px 28px rgba(201,168,76,.18)}
+.store-btn svg{width:28px;height:28px;flex:0 0 auto;fill:#fff}
+.store-btn small{display:block;font-size:.7rem;opacity:.75;line-height:1.1}
+.store-btn b{display:block;font-size:1.08rem;line-height:1.2;font-weight:600}
+.web-link{display:inline-block;margin-top:18px;color:var(--gold);text-decoration:none;font-size:.95rem;border-bottom:1px dashed var(--gold-dim)}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;color:var(--text-dim);font-size:.9rem}
+.trust span::before{content:'✓ ';color:var(--gold)}
+/* phone mockup */
+.phone{width:290px;max-width:100%;margin:0 auto;border-radius:42px;padding:12px;background:linear-gradient(145deg,#1b2140,#070b1f);border:1px solid rgba(201,168,76,.35);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(201,168,76,.12)}
+.phone-screen{border-radius:32px;background:#0a1028;overflow:hidden;min-height:520px;display:flex;flex-direction:column}
+.phone-top{padding:22px 18px 14px;text-align:center;border-bottom:1px solid rgba(201,168,76,.15)}
+.phone-top .t{color:var(--gold);font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:1.1rem}
+.phone-top .s{color:var(--text-dim);font-size:.72rem;margin-top:2px}
+.chat{padding:16px 14px;display:flex;flex-direction:column;gap:12px;flex:1}
+.bubble{padding:10px 14px;border-radius:16px;font-size:.84rem;line-height:1.55;max-width:88%}
+.bubble.me{align-self:flex-start;background:rgba(201,168,76,.9);color:#1a1a2e;border-bottom-right-radius:4px}
+.bubble.bot{align-self:flex-end;background:rgba(255,255,255,.07);color:#eae6de;border:1px solid rgba(255,255,255,.08);border-bottom-left-radius:4px}
+html[lang="en"] .bubble.me{align-self:flex-end;border-bottom-right-radius:4px}
+html[lang="en"] .bubble.bot{align-self:flex-start}
+.phone-input{margin:0 12px 14px;padding:11px 14px;border-radius:22px;background:rgba(255,255,255,.06);color:var(--text-light);font-size:.8rem;border:1px solid rgba(255,255,255,.08)}
+.demo-note{text-align:center;color:var(--text-light);font-size:.75rem;margin-top:12px}
+/* features */
+.feat{text-align:center}
+.feat .ic{font-size:2.2rem;margin-bottom:10px}
+.feat h4{color:#fff;font-family:'Frank Ruhl Libre',serif;font-size:1.08rem;margin-bottom:8px}
+.feat p{color:var(--text-dim);font-size:.9rem;line-height:1.6}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.step{text-align:center;padding:28px 20px}
+.step .n{width:46px;height:46px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;background:var(--gold-glow);border:1px solid var(--gold);color:var(--gold);font-weight:800;font-size:1.15rem}
+.step h4{color:#fff;margin-bottom:6px;font-family:'Frank Ruhl Libre',serif}
+.step p{color:var(--text-dim);font-size:.9rem}
+/* bridge */
+.bridge{max-width:820px;margin:0 auto;text-align:center;padding:40px 32px}
+.bridge h2{font-family:'Frank Ruhl Libre',serif;color:#fff;font-size:1.7rem;margin-bottom:12px}
+.bridge p{color:var(--text-dim);margin-bottom:22px;line-height:1.7}
+.cta-final{text-align:center}
+.cta-final .store-row{justify-content:center;margin-top:24px}
+html.light .app-hero h1,html.light .feat h4,html.light .step h4,html.light .bridge h2{color:#1a1a2e!important}
+@media(max-width:860px){
+.app-hero{padding:110px 16px 40px}
+.app-hero .container{grid-template-columns:1fr;gap:36px;text-align:center}
+.app-hero .lead{margin-left:auto;margin-right:auto}
+.store-row,.trust{justify-content:center}
+.steps{grid-template-columns:1fr}
+.store-btn{min-width:0;flex:1 1 180px;justify-content:center}
+}
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-944658564"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','AW-944658564');
+gtag('config','G-L57EEPMT9Q');
+</script>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+
+<a href="https://wa.me/972584094045?text=%D7%A9%D7%9C%D7%95%D7%9D%2C+%D7%90%D7%A9%D7%9E%D7%97+%D7%9C%D7%A9%D7%9E%D7%95%D7%A2+%D7%A4%D7%A8%D7%98%D7%99%D7%9D+%D7%A2%D7%9C+%D7%97%D7%91%D7%A8%D7%95%D7%AA%D7%90" target="_blank" class="wa-fab">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav class="nav" id="nav">
+<div class="nav-left">
+<a href="contact.html" class="nav-cta"><span class="he">הרשמו עכשיו</span><span class="en">Register Now</span></a>
+</div>
+<div class="nav-center" id="navLinks"><a href="index.html"><span class="he">🏠 בית</span><span class="en">🏠 Home</span></a><a href="about.html"><span class="he">ℹ️ אודות</span><span class="en">ℹ️ About</span></a><a href="programs.html"><span class="he">📋 תוכניות</span><span class="en">📋 Programs</span></a><a href="faq.html"><span class="he">❓ שאלות נפוצות</span><span class="en">❓ FAQ</span></a><a href="topics.html"><span class="he">📚 נושאי לימוד</span><span class="en">📚 Topics</span></a><a href="contact.html"><span class="he">📞 צור קשר</span><span class="en">📞 Contact</span></a></div>
+<button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+<div class="nav-right">
+<button class="toggle-btn" onclick="toggleLang()" id="langBtn">EN</button>
+<button class="toggle-btn" onclick="toggleTheme()" id="themeBtn">☀️</button>
+<a href="index.html" class="nav-logo-text">נתיבות</a><a href="index.html"><img src="logo.png" alt="נתיבות" class="nav-logo-img"></a>
+</div>
+</nav>
+
+<header class="app-hero">
+<div class="container">
+<div>
+<div class="page-badge"><span class="he">אפליקציה חינמית של ארגון נתיבות</span><span class="en">A free app by Netivot</span></div>
+<h1><span class="he">שאלה ביהדות?<br><span class="gold">משה גינזי</span> עונה 24/7</span><span class="en">A question about Judaism?<br><span class="gold">Moshe Ginzy</span> answers 24/7</span></h1>
+<p class="lead"><span class="he">שבת, חגים, תפילה, כשרות ואמונה – שאלו כל שאלה וקבלו תשובה ברורה ומכבדת, בעברית או באנגלית. בחינם, בלי מנוי ובלי הרשמה.</span><span class="en">Shabbat, holidays, prayer, kashrut and faith — ask anything and get a clear, respectful answer in Hebrew or English. Free, no subscription, no sign-up.</span></p>
+<div class="store-row">
+<a class="store-btn" href="https://apps.apple.com/app/id6786922851" target="_blank" rel="noopener" data-platform="ios" data-loc="hero"><svg viewBox="0 0 24 24"><path d="M16.37 12.64c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.72-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.67-2.14.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.33-3.55zM14.18 6.2c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></svg><span><small><span class="he">הורידו מה-</span><span class="en">Download on the</span></small><b>App Store</b></span></a>
+<a class="store-btn" href="https://play.google.com/store/apps/details?id=com.mosheginzy.app" target="_blank" rel="noopener" data-platform="android" data-loc="hero"><svg viewBox="0 0 24 24"><path d="M3.6 2.2c-.23.25-.36.63-.36 1.12v17.36c0 .49.13.87.37 1.11l.06.05 9.72-9.72v-.23L3.66 2.15l-.6.05zm12.99 13.07-3.24-3.24v-.23l3.24-3.24.07.04 3.84 2.18c1.1.62 1.1 1.64 0 2.27l-3.84 2.18-.07.04zm-.08.04L13.2 12 3.6 21.6c.36.38.94.42 1.6.05l11.31-6.43zm0-6.62L5.2 2.26c-.66-.37-1.24-.33-1.6.05L13.2 12l3.31-3.31z"/></svg><span><small><span class="he">זמין ב-</span><span class="en">Get it on</span></small><b>Google Play</b></span></a>
+</div>
+<a class="web-link" href="https://mosheginzy.com" target="_blank" rel="noopener" data-platform="web" data-loc="hero"><span class="he">אין לכם אפליקציה? נסו ישר מהדפדפן ←</span><span class="en">Prefer the browser? Try it on the web →</span></a>
+<div class="trust"><span><span class="he">16,500+ שאלות ותשובות</span><span class="en">16,500+ Q&amp;As</span></span><span><span class="he">iPhone ו-Android</span><span class="en">iPhone &amp; Android</span></span><span><span class="he">חינם לגמרי</span><span class="en">Completely free</span></span></div>
+</div>
+<div>
+<div class="phone" aria-hidden="true">
+<div class="phone-screen">
+<div class="phone-top"><div class="t"><span class="he">משה גינזי</span><span class="en">Moshe Ginzy</span></div><div class="s"><span class="he">זמין עכשיו</span><span class="en">Available now</span></div></div>
+<div class="chat">
+<div class="bubble me"><span class="he">למה יושבים בסוכה?</span><span class="en">Why do we sit in a sukkah?</span></div>
+<div class="bubble bot"><span class="he">כדי לזכור שה' הושיב את עם ישראל בסוכות כשיצאו ממצרים, והגן עליהם במדבר. היציאה מהבית הקבוע לדירה ארעית מזכירה לנו שהביטחון האמיתי הוא באמונה 🌿</span><span class="en">To remember that G-d sheltered the Jewish people in sukkot after the Exodus and protected them in the desert. Leaving our permanent home for a temporary one reminds us where true security comes from 🌿</span></div>
+<div class="bubble me"><span class="he">ואם יורד גשם?</span><span class="en">And if it rains?</span></div>
+<div class="bubble bot"><span class="he">מי שמצטער מהגשם פטור מהסוכה. לשאלה הלכתית מעשית אפשר לפנות לקו ההלכה שלנו 📞</span><span class="en">Someone uncomfortable due to rain is exempt. For a practical halachic ruling, our halacha hotline is available 📞</span></div>
+</div>
+<div class="phone-input"><span class="he">כתבו שאלה...</span><span class="en">Type a question...</span></div>
+</div>
+</div>
+<div class="demo-note"><span class="he">המחשה של שיחה באפליקציה</span><span class="en">Illustration of a conversation in the app</span></div>
+</div>
+</div>
+</header>
+
+<section>
+<div class="container text-center">
+<span class="section-badge reveal"><span class="he">מה יש באפליקציה</span><span class="en">What's inside</span></span>
+<h2 class="section-title reveal"><span class="he">כל מה שצריך כדי ללמוד ולשאול</span><span class="en">Everything you need to learn and ask</span></h2>
+<div class="grid-3" style="margin-top:30px">
+<div class="glass-card feat reveal reveal-d1"><div class="ic">💬</div><h4><span class="he">שאלות ותשובות</span><span class="en">Questions &amp; Answers</span></h4><p><span class="he">מאגר של יותר מ-16,500 שאלות ותשובות ביהדות, זמין בכל שעה.</span><span class="en">A database of over 16,500 Jewish Q&amp;As, available any time.</span></p></div>
+<div class="glass-card feat reveal reveal-d2"><div class="ic">📅</div><h4><span class="he">שאלת היום וחידון</span><span class="en">Question of the Day &amp; Quiz</span></h4><p><span class="he">שאלה חדשה בכל יום, חידון קצר ופורום לשיתוף עם אחרים.</span><span class="en">A new question every day, a short quiz, and a community forum.</span></p></div>
+<div class="glass-card feat reveal reveal-d3"><div class="ic">🎬</div><h4><span class="he">סרטוני לימוד</span><span class="en">Video Lessons</span></h4><p><span class="he">שיעורים קצרים בעברית ובאנגלית על נושאים מרכזיים ביהדות.</span><span class="en">Short lessons in Hebrew and English on core Jewish topics.</span></p></div>
+</div>
+</div>
+</section>
+
+<section class="section-alt">
+<div class="container text-center">
+<span class="section-badge reveal"><span class="he">איך מתחילים</span><span class="en">Getting started</span></span>
+<h2 class="section-title reveal"><span class="he">שלושה צעדים פשוטים</span><span class="en">Three simple steps</span></h2>
+<div class="steps">
+<div class="glass-card step reveal reveal-d1"><div class="n">1</div><h4><span class="he">מורידים</span><span class="en">Download</span></h4><p><span class="he">מ-App Store או מ-Google Play, בחינם.</span><span class="en">From the App Store or Google Play, free.</span></p></div>
+<div class="glass-card step reveal reveal-d2"><div class="n">2</div><h4><span class="he">שואלים</span><span class="en">Ask</span></h4><p><span class="he">כותבים או מדברים – כל שאלה מותרת.</span><span class="en">Type or speak — every question is welcome.</span></p></div>
+<div class="glass-card step reveal reveal-d3"><div class="n">3</div><h4><span class="he">מעמיקים</span><span class="en">Go deeper</span></h4><p><span class="he">רוצים ללמוד עם אדם אמיתי? נרשמים לחונכות אישית.</span><span class="en">Want to learn with a real person? Sign up for personal mentoring.</span></p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="glass-card bridge reveal" style="border-color:rgba(201,168,76,.25)">
+<div style="font-size:2.2rem;margin-bottom:10px">🤝</div>
+<h2><span class="he">מאחורי משה גינזי עומד ארגון נתיבות</span><span class="en">Moshe Ginzy is brought to you by Netivot</span></h2>
+<p><span class="he">ארגון נתיבות (Congregation Netivot of New York Inc.) הוא ארגון ללא מטרות רווח שמחבר אנשים ללימוד יהדות דרך חונכות אישית אחד על אחד. משה גינזי הוא הדלת הראשונה – ומי שרוצה להעמיק, מקבל חברותא אישית שמותאמת בדיוק בשבילו.</span><span class="en">Netivot (Congregation Netivot of New York Inc.) is a nonprofit connecting people to Jewish learning through one-on-one personal mentoring. Moshe Ginzy is the first door — and anyone who wants to go deeper is matched with a personal learning partner.</span></p>
+<a href="contact.html" class="btn-gold"><span class="he">אני רוצה חברותא אישית ←</span><span class="en">I want a personal mentor →</span></a>
+</div>
+</div>
+</section>
+
+<section class="section-alt">
+<div class="container cta-final">
+<h2 class="section-title reveal"><span class="he">מוכנים לשאול את השאלה הראשונה?</span><span class="en">Ready to ask your first question?</span></h2>
+<p class="section-sub reveal"><span class="he">הורידו את משה גינזי עכשיו – זה לוקח פחות מדקה.</span><span class="en">Download Moshe Ginzy now — it takes less than a minute.</span></p>
+<div class="store-row">
+<a class="store-btn" href="https://apps.apple.com/app/id6786922851" target="_blank" rel="noopener" data-platform="ios" data-loc="footer_cta"><svg viewBox="0 0 24 24"><path d="M16.37 12.64c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.72-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.67-2.14.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.33-3.55zM14.18 6.2c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></svg><span><small><span class="he">הורידו מה-</span><span class="en">Download on the</span></small><b>App Store</b></span></a>
+<a class="store-btn" href="https://play.google.com/store/apps/details?id=com.mosheginzy.app" target="_blank" rel="noopener" data-platform="android" data-loc="footer_cta"><svg viewBox="0 0 24 24"><path d="M3.6 2.2c-.23.25-.36.63-.36 1.12v17.36c0 .49.13.87.37 1.11l.06.05 9.72-9.72v-.23L3.66 2.15l-.6.05zm12.99 13.07-3.24-3.24v-.23l3.24-3.24.07.04 3.84 2.18c1.1.62 1.1 1.64 0 2.27l-3.84 2.18-.07.04zm-.08.04L13.2 12 3.6 21.6c.36.38.94.42 1.6.05l11.31-6.43zm0-6.62L5.2 2.26c-.66-.37-1.24-.33-1.6.05L13.2 12l3.31-3.31z"/></svg><span><small><span class="he">זמין ב-</span><span class="en">Get it on</span></small><b>Google Play</b></span></a>
+</div>
+</div>
+</section>
+
+
+<footer class="footer">
+<div class="footer-brand">NETIVOT</div>
+<div class="footer-tagline">
+<span class="he">אוכל לנשמה · לימוד חברותא · חיבור לשורשים</span>
+<span class="en">Food for the Soul · Jewish Mentoring · Connecting to Roots</span>
+</div>
+<div class="footer-links">
+<a href="index.html"><span class="he">בית</span><span class="en">Home</span></a>
+<a href="about.html"><span class="he">אודות</span><span class="en">About</span></a>
+<a href="programs.html"><span class="he">תוכניות</span><span class="en">Programs</span></a>
+<a href="faq.html"><span class="he">שאלות נפוצות</span><span class="en">FAQ</span></a>
+<a href="topics.html"><span class="he">נושאי לימוד</span><span class="en">Topics</span></a>
+<a href="contact.html"><span class="he">צור קשר</span><span class="en">Contact</span></a>
+<a href="privacy.html"><span class="he">מדיניות פרטיות</span><span class="en">Privacy Policy</span></a>
+</div>
+<a href="app.html" class="footer-app">🎬 <span class="he">משה גינזי — אפליקציה ללימוד יהדות</span><span class="en">Moshe Ginzy — Jewish Learning App</span></a>
+<div class="footer-copy">© 2026 Netivot Organization · Congregation Netivot of New York Inc. · 501(c)(3) · EIN 13-4184366</div>
+</footer>
+
+<script>
+// Theme toggle
+function toggleTheme(){
+document.documentElement.classList.toggle('light');
+const isLight=document.documentElement.classList.contains('light');
+localStorage.setItem('theme',isLight?'light':'dark');
+document.getElementById('themeBtn').textContent=isLight?'🌙':'☀️';
+}
+// Lang toggle
+function toggleLang(){
+const cur=document.documentElement.getAttribute('lang');
+const next=cur==='he'?'en':'he';
+document.documentElement.setAttribute('lang',next);
+document.documentElement.setAttribute('dir',next==='he'?'rtl':'ltr');
+localStorage.setItem('lang',next);
+document.getElementById('langBtn').textContent=next==='he'?'EN':'עב';
+}
+// Restore saved prefs
+(function(){
+const t=localStorage.getItem('theme');
+if(t==='light'){document.documentElement.classList.add('light');document.getElementById('themeBtn').textContent='🌙'}
+const l=localStorage.getItem('lang');
+if(l==='en'){document.documentElement.setAttribute('lang','en');document.documentElement.setAttribute('dir','ltr');document.getElementById('langBtn').textContent='עב'}
+})();
+// Scroll progress
+window.addEventListener('scroll',()=>{
+const h=document.documentElement;
+const p=document.getElementById('scrollProgress');
+if(p)p.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';
+});
+// Reveal on scroll
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Animated counters
+function animateCounters(){
+document.querySelectorAll('[data-target]').forEach(el=>{
+const t=parseInt(el.dataset.target),s=el.dataset.suffix||'',dur=2000,st=performance.now();
+function u(n){const p=Math.min((n-st)/dur,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*t).toLocaleString()+s;if(p<1)requestAnimationFrame(u)}
+requestAnimationFrame(u);
+});}
+const sObs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){animateCounters();sObs.unobserve(el.target)}})},{threshold:.3});
+const sr=document.querySelector('.stats-row');if(sr)sObs.observe(sr);
+</script>
+<!-- Moshe Ginzy Chatbot -->
+
+<script>
+// Download-click tracking (GA4 event "app_download" – can be imported into Google Ads as a conversion)
+document.querySelectorAll('[data-platform]').forEach(function(a){
+a.addEventListener('click',function(){
+if(typeof gtag==='function'){gtag('event','app_download',{platform:a.dataset.platform,link_location:a.dataset.loc});}
+});
+});
+</script>
+<script>window.difyChatbotConfig={token:'app-VFD9vOFBd83JQC3BvLwuX5Q4'}</script>
+<script src="https://udify.app/embed.min.js" id="dify-chatbot" defer></script>
+<style>#dify-chatbot-bubble-button{bottom:24px!important;right:24px!important}</style>
+
+</body>
+</html>
