@@ -437,7 +437,11 @@ const sr=document.querySelector('.stats-row');if(sr)sObs.observe(sr);
 // Download-click tracking (GA4 event "app_download" – can be imported into Google Ads as a conversion)
 document.querySelectorAll('[data-platform]').forEach(function(a){
 a.addEventListener('click',function(){
-if(typeof gtag==='function'){gtag('event','app_download',{platform:a.dataset.platform,link_location:a.dataset.loc});}
+if(typeof gtag==='function'){
+gtag('event','app_download',{platform:a.dataset.platform,link_location:a.dataset.loc});
+// Google Ads conversion: "הורדת אפליקציה" – counts only store-button clicks
+if(a.dataset.platform==='ios'||a.dataset.platform==='android'){gtag('event','conversion',{'send_to':'AW-944658564/PdYkCNi6tYsdEISxucID'});}
+}
 });
 });
 </script>
