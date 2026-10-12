@@ -514,7 +514,8 @@ document.addEventListener('touchstart',function s(){const v=slides[cur].querySel
 })();
 // Chavruta registration form
 function submitChavruta(e){
-e.preventDefault();var f=e.target,d=new FormData(f);
+e.preventDefault();try{gtag('event','conversion',{'send_to':'AW-944658564/9XgvCMammPcbEISxucID','value':1.0,'currency':'USD'});gtag('event','generate_lead',{form:'submitChavruta'});}catch(_){}
+var f=e.target,d=new FormData(f);
 // Send via Formspree only - no WhatsApp
 fetch('https://formspree.io/f/xnjwdeyd',{method:'POST',body:d,headers:{'Accept':'application/json'}}).catch(function(){});
 document.getElementById('chavrutaForm').style.display='none';
@@ -522,7 +523,8 @@ document.getElementById('chavrutaSuccess').style.display='block';
 }
 // Form (contact section)
 function submitForm(e){
-e.preventDefault();const f=e.target,d=new FormData(f);
+e.preventDefault();try{gtag('event','conversion',{'send_to':'AW-944658564/9XgvCMammPcbEISxucID','value':1.0,'currency':'USD'});gtag('event','generate_lead',{form:'submitForm'});}catch(_){}
+const f=e.target,d=new FormData(f);
 const name=d.get('name'),phone=d.get('phone'),loc=d.get('location')||'';
 const msg='שלום, שמי '+name+'. אשמח לקבוע חברותא.\nטלפון: '+phone+(loc?'\nמיקום: '+loc:'');
 window.open('https://wa.me/972584094045?text='+encodeURIComponent(msg),'_blank');

@@ -286,7 +286,8 @@ gtag('config','G-L57EEPMT9Q');
 
 <script>
 function submitForm(e){
-e.preventDefault();const f=e.target,d=new FormData(f);
+e.preventDefault();try{gtag('event','conversion',{'send_to':'AW-944658564/9XgvCMammPcbEISxucID','value':1.0,'currency':'USD'});gtag('event','generate_lead',{form:'submitForm'});}catch(_){}
+const f=e.target,d=new FormData(f);
 const name=d.get('name'),phone=d.get('phone'),email=d.get('email')||'',loc=d.get('location')||'';
 let msg='שלום, שמי '+name+'. אשמח לקבוע חברותא.\nטלפון: '+phone;
 if(email)msg+='\nאימייל: '+email;
