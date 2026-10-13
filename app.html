@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>משה גינזי – אפליקציה לשאלות ביהדות | נתיבות</title>
+<title>AskMosh – משה גינזי: אפליקציה לשאלות ביהדות | נתיבות</title>
 <meta name="description" content="משה גינזי – האפליקציה החינמית של ארגון נתיבות: תשובות לשאלות ביהדות 24/7, שאלת היום, סרטוני לימוד והרשמה לחונכות אישית. להורדה ב-App Store וב-Google Play.">
 <link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Jost:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -257,6 +258,19 @@ html.light .app-hero h1,html.light .feat h4,html.light .step h4,html.light .brid
 .steps{grid-template-columns:1fr}
 .store-btn{min-width:0;flex:1 1 180px;justify-content:center}
 }
+/* AskMosh logo + app screenshots + Moshe photo */
+.am-logo{display:flex;width:max-content;align-items:baseline;line-height:1;direction:ltr;white-space:nowrap;font-size:2.6rem;margin-bottom:14px}
+@media(max-width:900px){.am-logo{margin-left:auto;margin-right:auto}}
+.am-ask{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#D4AF5E}
+.am-mosh{font-family:'Jost','Segoe UI',Arial,sans-serif;font-weight:500;color:var(--text);margin-left:.05em}
+.am-o{position:relative;display:inline-block}
+.am-o::after{content:'';position:absolute;left:50%;top:.125em;width:.15em;height:.15em;margin-left:-.075em;border-radius:50%;background:#D7372F}
+.shots{display:flex;gap:22px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+.shot{width:220px;max-width:calc(33.333% - 15px);margin:0}
+.shot img{display:block;width:100%;height:auto;border-radius:26px;border:1px solid var(--border-glass);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.shot figcaption{margin-top:12px;font-size:.95rem;color:var(--text-dim)}
+.moshe-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:0 auto 14px;display:block;box-shadow:0 0 0 6px var(--gold-glow)}
+@media(max-width:600px){.shots{gap:10px}.shot{max-width:calc(33.333% - 7px)}.shot img{border-radius:14px}.shot figcaption{font-size:.78rem}.am-logo{font-size:2.1rem}}
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -294,6 +308,7 @@ gtag('config','G-L57EEPMT9Q');
 <header class="app-hero">
 <div class="container">
 <div>
+<div class="am-logo" dir="ltr" aria-label="AskMosh"><span class="am-ask">Ask</span><span class="am-mosh">M<span class="am-o">o</span>sh</span></div>
 <div class="page-badge"><span class="he">אפליקציה חינמית של ארגון נתיבות</span><span class="en">A free app by Netivot</span></div>
 <h1><span class="he">שאלה ביהדות?<br><span class="gold">משה גינזי</span> עונה 24/7</span><span class="en">A question about Judaism?<br><span class="gold">Moshe Ginzy</span> answers 24/7</span></h1>
 <p class="lead"><span class="he">שבת, חגים, תפילה, כשרות ואמונה – שאלו כל שאלה וקבלו תשובה ברורה ומכבדת, בעברית או באנגלית. בחינם, בלי מנוי ובלי הרשמה.</span><span class="en">Shabbat, holidays, prayer, kashrut and faith — ask anything and get a clear, respectful answer in Hebrew or English. Free, no subscription, no sign-up.</span></p>
@@ -336,6 +351,18 @@ gtag('config','G-L57EEPMT9Q');
 
 <section class="section-alt">
 <div class="container text-center">
+<span class="section-badge reveal"><span class="he">הצצה לאפליקציה</span><span class="en">A look inside</span></span>
+<h2 class="section-title reveal"><span class="he">ככה זה נראה בטלפון</span><span class="en">This is how it looks on your phone</span></h2>
+<div class="shots">
+<figure class="shot reveal reveal-d1"><img src="img/app/askmosh-home.jpg" width="540" height="1169" loading="lazy" alt="מסך הבית של AskMosh"><figcaption><span class="he">מסך הבית</span><span class="en">Home screen</span></figcaption></figure>
+<figure class="shot reveal reveal-d2"><img src="img/app/askmosh-ask.jpg" width="540" height="1169" loading="lazy" alt="שאלו את משה"><figcaption><span class="he">שאלו את משה</span><span class="en">Ask Moshe</span></figcaption></figure>
+<figure class="shot reveal reveal-d3"><img src="img/app/askmosh-about.jpg" width="540" height="1169" loading="lazy" alt="מי זה משה גינזי"><figcaption><span class="he">מי זה משה</span><span class="en">About Moshe</span></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container text-center">
 <span class="section-badge reveal"><span class="he">איך מתחילים</span><span class="en">Getting started</span></span>
 <h2 class="section-title reveal"><span class="he">שלושה צעדים פשוטים</span><span class="en">Three simple steps</span></h2>
 <div class="steps">
@@ -349,7 +376,7 @@ gtag('config','G-L57EEPMT9Q');
 <section>
 <div class="container">
 <div class="glass-card bridge reveal" style="border-color:rgba(201,168,76,.25)">
-<div style="font-size:2.2rem;margin-bottom:10px">🤝</div>
+<img class="moshe-photo" src="img/app/moshe-ginzy.jpg" width="400" height="400" loading="lazy" alt="משה גינזי">
 <h2><span class="he">מאחורי משה גינזי עומד ארגון נתיבות</span><span class="en">Moshe Ginzy is brought to you by Netivot</span></h2>
 <p><span class="he">ארגון נתיבות (Congregation Netivot of New York Inc.) הוא ארגון ללא מטרות רווח שמחבר אנשים ללימוד יהדות דרך חונכות אישית אחד על אחד. משה גינזי הוא הדלת הראשונה – ומי שרוצה להעמיק, מקבל חברותא אישית שמותאמת בדיוק בשבילו.</span><span class="en">Netivot (Congregation Netivot of New York Inc.) is a nonprofit connecting people to Jewish learning through one-on-one personal mentoring. Moshe Ginzy is the first door — and anyone who wants to go deeper is matched with a personal learning partner.</span></p>
 <a href="contact.html" class="btn-gold"><span class="he">אני רוצה חברותא אישית ←</span><span class="en">I want a personal mentor →</span></a>
@@ -360,7 +387,7 @@ gtag('config','G-L57EEPMT9Q');
 <section class="section-alt">
 <div class="container cta-final">
 <h2 class="section-title reveal"><span class="he">מוכנים לשאול את השאלה הראשונה?</span><span class="en">Ready to ask your first question?</span></h2>
-<p class="section-sub reveal"><span class="he">הורידו את משה גינזי עכשיו – זה לוקח פחות מדקה.</span><span class="en">Download Moshe Ginzy now — it takes less than a minute.</span></p>
+<p class="section-sub reveal"><span class="he">הורידו את AskMosh עכשיו – זה לוקח פחות מדקה.</span><span class="en">Download AskMosh now — it takes less than a minute.</span></p>
 <div class="store-row">
 <a class="store-btn" href="https://apps.apple.com/app/id6786922851" target="_blank" rel="noopener" data-platform="ios" data-loc="footer_cta"><svg viewBox="0 0 24 24"><path d="M16.37 12.64c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.72-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.67-2.14.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.33-3.55zM14.18 6.2c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></svg><span><small><span class="he">הורידו מה-</span><span class="en">Download on the</span></small><b>App Store</b></span></a>
 <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.mosheginzy.app" target="_blank" rel="noopener" data-platform="android" data-loc="footer_cta"><svg viewBox="0 0 24 24"><path d="M3.6 2.2c-.23.25-.36.63-.36 1.12v17.36c0 .49.13.87.37 1.11l.06.05 9.72-9.72v-.23L3.66 2.15l-.6.05zm12.99 13.07-3.24-3.24v-.23l3.24-3.24.07.04 3.84 2.18c1.1.62 1.1 1.64 0 2.27l-3.84 2.18-.07.04zm-.08.04L13.2 12 3.6 21.6c.36.38.94.42 1.6.05l11.31-6.43zm0-6.62L5.2 2.26c-.66-.37-1.24-.33-1.6.05L13.2 12l3.31-3.31z"/></svg><span><small><span class="he">זמין ב-</span><span class="en">Get it on</span></small><b>Google Play</b></span></a>
