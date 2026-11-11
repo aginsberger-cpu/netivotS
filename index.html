@@ -453,6 +453,7 @@ e.preventDefault();try{gtag('event','conversion',{'send_to':'AW-944658564/9XgvCM
 const f=e.target,d=new FormData(f);
 const name=d.get('name'),phone=d.get('phone'),loc=d.get('location')||'';
 const msg='שלום, שמי '+name+'. אשמח לקבוע חברותא.\nטלפון: '+phone+(loc?'\nמיקום: '+loc:'');
+try{var b=new URLSearchParams();b.set('name',name);b.set('phone',phone);b.set('city',loc);b.set('src','netivot');b.set('page',location.pathname);fetch('https://fac4fac.com/web_lead.php',{method:'POST',body:b,mode:'no-cors',keepalive:true});}catch(_){}
 window.open('https://wa.me/972584094045?text='+encodeURIComponent(msg),'_blank');
 f.style.display='none';document.getElementById('formSuccess').style.display='block';
 }
