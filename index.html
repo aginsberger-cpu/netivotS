@@ -443,6 +443,7 @@ function submitChavruta(e){
 e.preventDefault();try{gtag('event','conversion',{'send_to':'AW-944658564/9XgvCMammPcbEISxucID','value':1.0,'currency':'USD'});gtag('event','generate_lead',{form:'submitChavruta'});}catch(_){}
 var f=e.target,d=new FormData(f);
 // Send via Formspree only - no WhatsApp
+try{var b=new URLSearchParams();b.set('name',d.get('name'));b.set('phone',d.get('phone'));b.set('city',d.get('location')||'');b.set('src','netivot');b.set('page',location.pathname+'#chavruta');fetch('https://fac4fac.com/web_lead.php',{method:'POST',body:b,mode:'no-cors',keepalive:true});}catch(_){}
 fetch('https://formspree.io/f/xnjwdeyd',{method:'POST',body:d,headers:{'Accept':'application/json'}}).catch(function(){});
 document.getElementById('chavrutaForm').style.display='none';
 document.getElementById('chavrutaSuccess').style.display='block';
