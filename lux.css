@@ -208,3 +208,6 @@ h1,h2,h3,h4,.section-title,.page-hero h1,.hero-title,.lx-title,.lx-door-t,.lx-nu
 .lx-em{width:1em;height:1em;vertical-align:-.14em;color:var(--gold);stroke-width:1.4}
 .topic-icon .lx-em,.lx-ico .lx-em{width:20px;height:20px;vertical-align:0}
 .stat-num{direction:ltr;unicode-bidi:isolate}
+.lx-stats5{display:flex!important;flex-wrap:wrap;justify-content:center;gap:20px}
+.lx-stats5>.glass-card{flex:0 1 calc(33.333% - 14px)}
+@media(max-width:768px){.lx-stats5>.glass-card{flex-basis:100%}}
