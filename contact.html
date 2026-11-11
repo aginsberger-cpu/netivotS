@@ -293,6 +293,7 @@ const name=d.get('name'),phone=d.get('phone'),email=d.get('email')||'',loc=d.get
 let msg='שלום, שמי '+name+'. אשמח לקבוע חברותא.\nטלפון: '+phone;
 if(email)msg+='\nאימייל: '+email;
 if(loc)msg+='\nמיקום: '+loc;
+try{var b=new URLSearchParams();b.set('name',name);b.set('phone',phone);b.set('email',email);b.set('city',loc);b.set('src','netivot');b.set('page',location.pathname);fetch('https://fac4fac.com/web_lead.php',{method:'POST',body:b,mode:'no-cors',keepalive:true});}catch(_){}
 window.open('https://wa.me/972584094045?text='+encodeURIComponent(msg),'_blank');
 f.style.display='none';document.getElementById('formSuccess').style.display='block';
 }
